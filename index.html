@@ -1,12 +1,12 @@
+```html
 <!DOCTYPE html>
-
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Marketing Previsível</title>
 
@@ -18,34 +18,41 @@
 
 <div class="container">
 
-<header>
-
 <h1>🚀 Marketing Previsível</h1>
 
 <h2>Planejador de Crescimento Empresarial</h2>
 
 <p>
 
-Descubra qual investimento é necessário para atingir sua meta de crescimento.
+Descubra quanto precisa investir para atingir sua meta de crescimento.
 
 </p>
 
-</header>
-
-
-<section class="card">
+<div class="card">
 
 <h3>📊 Dados da empresa</h3>
 
-<input type="number" id="faturamento" placeholder="Faturamento mensal (R$)">
+<input id="faturamento" type="number" placeholder="Faturamento mensal (R$)">
 
-<input type="number" id="meta" placeholder="Meta de crescimento (%)">
+<input id="meta" type="number" placeholder="Meta de crescimento (%)">
 
-<input type="number" id="ticket" placeholder="Ticket médio (R$)">
+<input id="ticket" type="number" placeholder="Ticket médio (R$)">
 
-<input type="number" id="conversao" placeholder="Taxa de conversão (%)">
+<input id="conversao" type="number" placeholder="Taxa de conversão (%)">
 
-<input type="number" id="cpl" placeholder="Custo por Lead (R$)">
+<input id="cpl" type="number" placeholder="Custo por Lead (R$)">
+
+<select id="plano">
+
+<option value="">Como deseja iniciar?</option>
+
+<option value="150">🌱 Começando a investir</option>
+
+<option value="500">🚀 Crescimento estruturado</option>
+
+<option value="800">👑 Escala empresarial</option>
+
+</select>
 
 <button onclick="calcular()">
 
@@ -53,23 +60,9 @@ Calcular Planejamento
 
 </button>
 
-</section>
+</div>
 
-
-<section class="resultado" id="resultado">
-
-<h3>📈 Cenário Projetado</h3>
-
-<div id="dadosResultado"></div>
-
-</section>
-
-
-<footer>
-
-Desenvolvido por Andressa Titoneli
-
-</footer>
+<div id="resultado"></div>
 
 </div>
 
@@ -78,3 +71,4 @@ Desenvolvido por Andressa Titoneli
 </body>
 
 </html>
+```
