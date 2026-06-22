@@ -1,1 +1,287 @@
+<!DOCTYPE html>
 
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Onboarding Comercial</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>🤝 Formalização da Parceria Comercial</h1>
+
+<h2>Estamos a um passo de iniciar o crescimento da sua empresa.</h2>
+
+</header>
+
+<div id="planejamento" class="card"></div>
+
+<div class="card">
+
+<h2>👤 Dados do responsável</h2>
+
+<input type="text" id="nome" placeholder="Nome completo do responsável">
+
+<input type="email" id="email" placeholder="E-mail">
+
+<input type="text" id="whatsapp" placeholder="WhatsApp">
+
+<h2>🏢 Dados da empresa</h2>
+
+<input type="text" id="empresa" placeholder="Nome da empresa">
+
+<input type="text" id="cnpj" placeholder="CNPJ">
+
+<input type="text" id="instagram" placeholder="Instagram">
+
+<input type="text" id="cidade" placeholder="Cidade">
+
+<input type="text" id="estado" placeholder="Estado">
+
+<input type="text" id="pais" value="Brasil">
+
+<hr>
+
+<h2>📄 Resumo da contratação</h2>
+
+<p>
+
+📊 O planejamento financeiro apresentado anteriormente acompanhará esta formalização e servirá como referência inicial para a construção da estratégia personalizada da sua empresa.
+
+</p>
+
+<p>
+
+📅 O início das atividades ocorrerá após a validação da parceria e a disponibilização dos acessos necessários.
+
+</p>
+
+<hr>
+
+<h2>🤝 Declarações obrigatórias</h2>
+
+<label>
+
+<input type="checkbox" id="declaracao1">
+
+Declaro que li e concordo com a Formalização da Parceria Comercial.
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="checkbox" id="declaracao2">
+
+Confirmo que as informações fornecidas são verdadeiras.
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="checkbox" id="declaracao3">
+
+Estou ciente de que os acessos às plataformas permanecerão sob propriedade da minha empresa.
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="checkbox" id="declaracao4">
+
+Estou ciente de que os resultados dependem da colaboração entre as partes.
+
+</label>
+
+<br><br>
+
+<button onclick="enviarParceria()">
+
+🚀 Formalizar parceria
+
+</button>
+
+<div id="mensagem"></div>
+
+</div>
+
+<footer>
+
+Desenvolvido por Andressa Titoneli
+
+</footer>
+
+</div>
+
+<script>
+
+const planejamento = JSON.parse(
+
+localStorage.getItem("planejamentoMarketing")
+
+);
+
+if(planejamento){
+
+document.getElementById("planejamento").innerHTML=`
+
+<h2>📊 Seu Planejamento Estratégico</h2>
+
+<p>💰 Faturamento atual: R$ ${planejamento.faturamento}</p>
+
+<p>📈 Meta de crescimento: ${planejamento.crescimento}%</p>
+
+<p>💵 Faturamento adicional: R$ ${planejamento.faturamentoExtra}</p>
+
+<p>👥 Clientes necessários: ${planejamento.clientes}</p>
+
+<p>🎯 Leads necessários: ${planejamento.leads}</p>
+
+<p>📢 Investimento em anúncios: R$ ${planejamento.anuncios}</p>
+
+<p>👩‍💻 Sua especialista em Tráfego Pago: R$ ${planejamento.fee}</p>
+
+<p>🏆 Investimento total: R$ ${planejamento.investimentoTotal}</p>
+
+`;
+
+}
+
+async function enviarParceria(){
+
+const nome=document.getElementById("nome").value;
+
+const email=document.getElementById("email").value;
+
+const whatsapp=document.getElementById("whatsapp").value;
+
+const empresa=document.getElementById("empresa").value;
+
+const cnpj=document.getElementById("cnpj").value;
+
+const instagram=document.getElementById("instagram").value;
+
+const cidade=document.getElementById("cidade").value;
+
+const estado=document.getElementById("estado").value;
+
+const pais=document.getElementById("pais").value;
+
+if(
+
+!nome ||
+
+!email ||
+
+!whatsapp ||
+
+!empresa
+
+){
+
+alert("Preencha os campos obrigatórios.");
+
+return;
+
+}
+
+const dados={
+
+...planejamento,
+
+nome,
+
+email,
+
+whatsapp,
+
+empresa,
+
+cnpj,
+
+instagram,
+
+cidade,
+
+estado,
+
+pais
+
+};
+
+try{
+
+await fetch(
+
+"https://n8n-production-327ae.up.railway.app/webhook/aceite-parceria",
+
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify(dados)
+
+}
+
+);
+
+document.getElementById("mensagem").innerHTML=`
+
+<h2>✅ Parceria formalizada com sucesso</h2>
+
+<p>
+
+Recebi suas informações e em breve entrarei em contato para iniciarmos sua estratégia.
+
+</p>
+
+`;
+
+}
+
+catch{
+
+document.getElementById("mensagem").innerHTML=`
+
+<h2>❌ Ocorreu um erro</h2>
+
+<p>
+
+Tente novamente em alguns instantes.
+
+</p>
+
+`;
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
