@@ -166,7 +166,7 @@ document.getElementById('resultado').innerHTML = `
 
 ☀️ Investimento diário: <strong>R$ ${diario}</strong><br>
 
-💼 Fee de gestão: <strong>R$ ${fee}</strong><br>
+👩‍💻 Sua especialista em Tráfego Pago: <strong>R$ ${fee}</strong><br>
 
 <hr>
 
