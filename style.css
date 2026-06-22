@@ -1,12 +1,13 @@
+```css
 body{
+
+background:#f3f0fa;
 
 font-family:Arial,sans-serif;
 
-background:#f5f3ff;
-
 margin:0;
 
-padding:30px;
+padding:40px;
 
 }
 
@@ -18,23 +19,25 @@ margin:auto;
 
 }
 
-header{
-
-text-align:center;
-
-margin-bottom:30px;
-
-}
-
 h1{
 
-color:#6D28D9;
+color:#6a1b9a;
+
+text-align:center;
 
 }
 
 h2{
 
-color:#4C1D95;
+color:#4a148c;
+
+text-align:center;
+
+}
+
+p{
+
+text-align:center;
 
 }
 
@@ -46,11 +49,11 @@ padding:30px;
 
 border-radius:20px;
 
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 
 }
 
-input{
+input,select{
 
 width:100%;
 
@@ -58,11 +61,11 @@ padding:15px;
 
 margin:10px 0;
 
+font-size:16px;
+
 border:1px solid #ddd;
 
 border-radius:10px;
-
-font-size:16px;
 
 box-sizing:border-box;
 
@@ -74,15 +77,15 @@ width:100%;
 
 padding:18px;
 
-background:#6D28D9;
+background:#7b2ff7;
 
 color:white;
-
-font-size:18px;
 
 border:none;
 
 border-radius:10px;
+
+font-size:18px;
 
 cursor:pointer;
 
@@ -90,30 +93,41 @@ cursor:pointer;
 
 button:hover{
 
-background:#4C1D95;
+opacity:0.9;
 
 }
 
 .resultado{
 
-background:white;
-
 margin-top:30px;
+
+background:white;
 
 padding:30px;
 
 border-radius:20px;
 
-display:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 
 }
 
-footer{
+.velocimetro{
 
-text-align:center;
+font-size:22px;
 
-margin-top:40px;
-
-color:#666;
+margin-top:20px;
 
 }
+
+.cta{
+
+margin-top:20px;
+
+padding:20px;
+
+background:#f4e8ff;
+
+border-radius:15px;
+
+}
+```
