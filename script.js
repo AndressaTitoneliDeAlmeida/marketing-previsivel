@@ -170,7 +170,7 @@ document.getElementById('resultado').innerHTML = `
 
 <hr>
 
-🏆 Total mensal: <strong>R$ ${total}</strong>
+🏆 Investimento total mensal recomendado: <strong>R$ ${total}</strong>
 
 <hr>
 
