@@ -258,11 +258,6 @@ style="width:${barra}%;background:${cor};">
 
 }
 
-function irParaParceria() {
-
-window.location.href = "aceite.html";
-
-}
 function abrirFormularioAceite(){
 
 window.location.href="aceite.html";
