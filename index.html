@@ -1,1 +1,164 @@
+<!DOCTYPE html>
 
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Formalização da Parceria</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>🤝 Formalização da Parceria</h1>
+
+<h2>Estamos a um passo de iniciar seu crescimento.</h2>
+
+<p>
+
+Preencha os dados abaixo para formalizar sua solicitação.
+
+</p>
+
+</header>
+
+<div class="card">
+
+<h3>📋 Dados do responsável</h3>
+
+<input
+type="text"
+id="nome"
+placeholder="Nome completo"
+>
+
+<input
+type="text"
+id="empresa"
+placeholder="Nome da empresa"
+>
+
+<input
+type="text"
+id="whatsapp"
+placeholder="WhatsApp"
+>
+
+<input
+type="email"
+id="email"
+placeholder="E-mail"
+>
+
+<input
+type="text"
+id="instagram"
+placeholder="Instagram da empresa"
+>
+
+<input
+type="text"
+id="cidade"
+placeholder="Cidade"
+>
+
+<label>
+
+<input
+type="checkbox"
+id="aceite"
+>
+
+Li e concordo com a Formalização da Parceria Comercial.
+
+</label>
+
+<button onclick="enviarParceria()">
+
+🚀 Formalizar parceria
+
+</button>
+
+<div id="mensagem"></div>
+
+</div>
+
+<footer>
+
+Desenvolvido por Andressa Titoneli
+
+</footer>
+
+</div>
+
+<script>
+
+function enviarParceria(){
+
+const nome=document.getElementById("nome").value;
+
+const empresa=document.getElementById("empresa").value;
+
+const whatsapp=document.getElementById("whatsapp").value;
+
+const email=document.getElementById("email").value;
+
+const instagram=document.getElementById("instagram").value;
+
+const cidade=document.getElementById("cidade").value;
+
+const aceite=document.getElementById("aceite").checked;
+
+if(
+
+!nome ||
+
+!empresa ||
+
+!whatsapp ||
+
+!email ||
+
+!aceite
+
+){
+
+alert("Preencha todos os campos obrigatórios.");
+
+return;
+
+}
+
+document.getElementById("mensagem").innerHTML=`
+
+<h3>
+
+✅ Solicitação recebida.
+
+</h3>
+
+<p>
+
+Em instantes sua parceria será processada.
+
+</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>
