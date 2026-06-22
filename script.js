@@ -52,6 +52,32 @@ cpl = 18;
 
 }
 
+let nomeEstagio = "";
+
+if (estagio == 1) {
+
+nomeEstagio = "🌱 Estou começando";
+
+}
+
+if (estagio == 2) {
+
+nomeEstagio = "🚀 Já tenho alguns clientes";
+
+}
+
+if (estagio == 3) {
+
+nomeEstagio = "🏢 Minha operação está estruturada";
+
+}
+
+if (estagio == 4) {
+
+nomeEstagio = "👑 Quero escalar agressivamente";
+
+}
+
 let faturamentoExtra = faturamento * (crescimento / 100);
 
 let clientes = Math.ceil(faturamentoExtra / ticket);
@@ -168,6 +194,8 @@ crescimento,
 
 estagio,
 
+nomeEstagio,
+
 faturamentoExtra,
 
 clientes,
@@ -188,7 +216,9 @@ pontuacao,
 
 potencial,
 
-escala
+escala,
+
+recomendacao
 
 };
 
@@ -258,22 +288,14 @@ style="width:${barra}%;background:${cor};">
 
 <p>💡 Recomendação: <strong>${recomendacao}</strong></p>
 
-<hr>
-
-<button onclick="abrirFormularioAceite()">
-
-🤝 Quero iniciar meu crescimento
-
-</button>
-
 `;
 
-document.getElementById("areaParceria").style.display="block";
+document.getElementById("areaParceria").style.display = "block";
 
 }
 
 function abrirFormularioAceite(){
 
-window.location.href="aceite.html";
+window.location.href = "aceite.html";
 
 }
