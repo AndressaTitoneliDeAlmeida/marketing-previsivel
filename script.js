@@ -1,4 +1,3 @@
-```javascript
 function calcular(){
 
 const faturamento = Number(document.getElementById('faturamento').value);
@@ -11,6 +10,7 @@ const conversao = Number(document.getElementById('conversao').value);
 
 const cpl = Number(document.getElementById('cpl').value);
 
+
 if(!faturamento || !meta || !ticket || !conversao || !cpl){
 
 alert('Preencha todos os campos.');
@@ -18,6 +18,9 @@ alert('Preencha todos os campos.');
 return;
 
 }
+
+
+// CÁLCULOS
 
 const faturamentoExtra = faturamento * (meta/100);
 
@@ -32,7 +35,7 @@ const investimentoSemanal = Math.ceil(investimentoAds/4);
 const investimentoDiario = Math.ceil(investimentoAds/30);
 
 
-// SISTEMA INTELIGENTE
+// NÍVEL ESTRATÉGICO
 
 let fee=0;
 
@@ -40,7 +43,8 @@ let nivel='';
 
 let descricao='';
 
-if(investimentoAds <= 500){
+
+if(investimentoAds <=500){
 
 fee=150;
 
@@ -66,11 +70,39 @@ fee=800;
 
 nivel='👑 Escala Empresarial';
 
-descricao='Ideal para empresas que desejam acelerar resultados e escalar suas operações.';
+descricao='Ideal para empresas que desejam acelerar seus resultados.';
 
 }
 
-// DIAGNÓSTICO INTELIGENTE
+
+const investimentoTotal = investimentoAds + fee;
+
+
+// VELOCÍMETRO
+
+let velocimetro='';
+
+
+if(investimentoTotal <=1500){
+
+velocimetro='🟨 Conservador';
+
+}
+
+else if(investimentoTotal <=3500){
+
+velocimetro='🟩 Recomendado';
+
+}
+
+else{
+
+velocimetro='🟦 Acelerado';
+
+}
+
+
+// DIAGNÓSTICO
 
 let pontuacao = 0;
 
@@ -163,15 +195,12 @@ pontuacao +=20;
 
 let potencial='';
 
-let cor='';
-
 let escala='';
+
 
 if(pontuacao <=40){
 
 potencial='🔴 Potencial Inicial';
-
-cor='🔴';
 
 escala='Baixa';
 
@@ -181,8 +210,6 @@ else if(pontuacao <=70){
 
 potencial='🟡 Potencial Moderado';
 
-cor='🟡';
-
 escala='Média';
 
 }
@@ -190,8 +217,6 @@ escala='Média';
 else if(pontuacao <=90){
 
 potencial='🟢 Alto Potencial';
-
-cor='🟢';
 
 escala='Boa';
 
@@ -201,39 +226,14 @@ else{
 
 potencial='🔵 Potencial de Escala';
 
-cor='🔵';
-
 escala='Excelente';
-
-}
-
-
-// VELOCÍMETRO
-
-let velocimetro='';
-
-if(investimentoTotal <=1500){
-
-velocimetro='🟨 Baixo investimento';
-
-}
-
-else if(investimentoTotal <=3500){
-
-velocimetro='🟩 Investimento recomendado';
-
-}
-
-else{
-
-velocimetro='🟦 Investimento agressivo';
 
 }
 
 
 // RESULTADO
 
-document.getElementById('resultado').innerHTML=`
+document.getElementById('resultado').innerHTML = `
 
 <div class="resultado">
 
@@ -263,9 +263,23 @@ document.getElementById('resultado').innerHTML=`
 
 <hr>
 
+<h3>🧠 Diagnóstico Comercial Inteligente</h3>
+
+<p><strong>Pontuação:</strong> ${pontuacao}/100</p>
+
+<p><strong>Potencial identificado:</strong> ${potencial}</p>
+
+<p><strong>Capacidade de escala:</strong> ${escala}</p>
+
+<hr>
+
 <h2>🏆 Investimento total mensal: R$ ${investimentoTotal.toLocaleString('pt-BR')}</h2>
 
-<h3>${velocimetro}</h3>
+<div class="velocimetro">
+
+${velocimetro}
+
+</div>
 
 <div class="cta">
 
@@ -282,4 +296,3 @@ O próximo passo é formalizar a parceria comercial.
 `;
 
 }
-```
