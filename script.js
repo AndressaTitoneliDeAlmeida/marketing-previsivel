@@ -11,9 +11,7 @@ const conversao = Number(document.getElementById('conversao').value);
 
 const cpl = Number(document.getElementById('cpl').value);
 
-const fee = Number(document.getElementById('plano').value);
-
-if(!faturamento || !meta || !ticket || !conversao || !cpl || !fee){
+if(!faturamento || !meta || !ticket || !conversao || !cpl){
 
 alert('Preencha todos os campos.');
 
@@ -33,35 +31,72 @@ const investimentoSemanal = Math.ceil(investimentoAds/4);
 
 const investimentoDiario = Math.ceil(investimentoAds/30);
 
-const investimentoTotal = investimentoAds + fee;
 
-let velocimetro='';
+// SISTEMA INTELIGENTE
 
-let estrategia='';
+let fee=0;
 
-if(investimentoTotal<=1500){
+let nivel='';
 
-velocimetro='🟨 Conservador';
+let descricao='';
 
-estrategia='💡 Crescimento gradual e validação do mercado.';
+if(investimentoAds <= 500){
+
+fee=150;
+
+nivel='🌱 Início Estruturado';
+
+descricao='Ideal para empresas que estão iniciando sua presença digital.';
 
 }
 
-else if(investimentoTotal<=3500){
+else if(investimentoAds <=1500){
 
-velocimetro='🟩 Recomendado';
+fee=500;
 
-estrategia='🚀 Cenário saudável para crescimento previsível.';
+nivel='🚀 Crescimento Estratégico';
+
+descricao='Ideal para empresas em expansão e crescimento consistente.';
 
 }
 
 else{
 
-velocimetro='🟦 Acelerado';
+fee=800;
 
-estrategia='🔥 Cenário ideal para escalar campanhas.';
+nivel='👑 Escala Empresarial';
+
+descricao='Ideal para empresas que desejam acelerar resultados e escalar suas operações.';
 
 }
+
+const investimentoTotal = investimentoAds + fee;
+
+
+// VELOCÍMETRO
+
+let velocimetro='';
+
+if(investimentoTotal <=1500){
+
+velocimetro='🟨 Baixo investimento';
+
+}
+
+else if(investimentoTotal <=3500){
+
+velocimetro='🟩 Investimento recomendado';
+
+}
+
+else{
+
+velocimetro='🟦 Investimento agressivo';
+
+}
+
+
+// RESULTADO
 
 document.getElementById('resultado').innerHTML=`
 
@@ -83,21 +118,23 @@ document.getElementById('resultado').innerHTML=`
 
 <hr>
 
-<p>💼 <strong>Gestão estratégica:</strong> R$ ${fee.toLocaleString('pt-BR')}</p>
+<h3>🧠 Diagnóstico Estratégico</h3>
 
-<h2>🏆 Total mensal: R$ ${investimentoTotal.toLocaleString('pt-BR')}</h2>
+<p><strong>Nível identificado:</strong> ${nivel}</p>
 
-<div class="velocimetro">
+<p>${descricao}</p>
 
-${velocimetro}
+<p><strong>💼 Gestão estratégica:</strong> R$ ${fee.toLocaleString('pt-BR')}</p>
 
-</div>
+<hr>
 
-<p>${estrategia}</p>
+<h2>🏆 Investimento total mensal: R$ ${investimentoTotal.toLocaleString('pt-BR')}</h2>
+
+<h3>${velocimetro}</h3>
 
 <div class="cta">
 
-🤝 Gostou deste planejamento?
+🤝 Este planejamento é uma projeção estratégica baseada nas informações fornecidas.
 
 <br><br>
 
