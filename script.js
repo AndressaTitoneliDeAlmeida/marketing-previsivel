@@ -70,7 +70,142 @@ descricao='Ideal para empresas que desejam acelerar resultados e escalar suas op
 
 }
 
-const investimentoTotal = investimentoAds + fee;
+// DIAGNÓSTICO INTELIGENTE
+
+let pontuacao = 0;
+
+
+// FATURAMENTO
+
+if(faturamento <=10000){
+
+pontuacao +=15;
+
+}
+
+else if(faturamento <=30000){
+
+pontuacao +=25;
+
+}
+
+else{
+
+pontuacao +=35;
+
+}
+
+
+// META
+
+if(meta <=10){
+
+pontuacao +=10;
+
+}
+
+else if(meta <=20){
+
+pontuacao +=15;
+
+}
+
+else{
+
+pontuacao +=20;
+
+}
+
+
+// CONVERSÃO
+
+if(conversao <=10){
+
+pontuacao +=10;
+
+}
+
+else if(conversao <=20){
+
+pontuacao +=15;
+
+}
+
+else{
+
+pontuacao +=20;
+
+}
+
+
+// TICKET
+
+if(ticket <=300){
+
+pontuacao +=10;
+
+}
+
+else if(ticket <=800){
+
+pontuacao +=15;
+
+}
+
+else{
+
+pontuacao +=20;
+
+}
+
+
+// CLASSIFICAÇÃO
+
+let potencial='';
+
+let cor='';
+
+let escala='';
+
+if(pontuacao <=40){
+
+potencial='🔴 Potencial Inicial';
+
+cor='🔴';
+
+escala='Baixa';
+
+}
+
+else if(pontuacao <=70){
+
+potencial='🟡 Potencial Moderado';
+
+cor='🟡';
+
+escala='Média';
+
+}
+
+else if(pontuacao <=90){
+
+potencial='🟢 Alto Potencial';
+
+cor='🟢';
+
+escala='Boa';
+
+}
+
+else{
+
+potencial='🔵 Potencial de Escala';
+
+cor='🔵';
+
+escala='Excelente';
+
+}
 
 
 // VELOCÍMETRO
