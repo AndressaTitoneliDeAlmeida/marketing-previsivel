@@ -1,59 +1,113 @@
+```javascript
 function calcular(){
 
-const faturamento=Number(document.getElementById('faturamento').value);
+const faturamento = Number(document.getElementById('faturamento').value);
 
-const meta=Number(document.getElementById('meta').value);
+const meta = Number(document.getElementById('meta').value);
 
-const ticket=Number(document.getElementById('ticket').value);
+const ticket = Number(document.getElementById('ticket').value);
 
-const conversao=Number(document.getElementById('conversao').value);
+const conversao = Number(document.getElementById('conversao').value);
 
-const cpl=Number(document.getElementById('cpl').value);
+const cpl = Number(document.getElementById('cpl').value);
 
+const fee = Number(document.getElementById('plano').value);
 
-const faturamentoExtra=(faturamento*meta)/100;
+if(!faturamento || !meta || !ticket || !conversao || !cpl || !fee){
 
-const clientes=Math.ceil(faturamentoExtra/ticket);
+alert('Preencha todos os campos.');
 
-const leads=Math.ceil(clientes/(conversao/100));
+return;
 
-const investimentoAds=leads*cpl;
+}
 
-const semanal=investimentoAds/4;
+const faturamentoExtra = faturamento * (meta/100);
 
-const diario=investimentoAds/30;
+const clientes = Math.ceil(faturamentoExtra/ticket);
 
-const fee=800;
+const leads = Math.ceil(clientes/(conversao/100));
 
-const total=investimentoAds+fee;
+const investimentoAds = Math.ceil(leads*cpl);
 
+const investimentoSemanal = Math.ceil(investimentoAds/4);
 
-document.getElementById('resultado').style.display='block';
+const investimentoDiario = Math.ceil(investimentoAds/30);
 
-document.getElementById('dadosResultado').innerHTML=`
+const investimentoTotal = investimentoAds + fee;
 
-<p>💰 Faturamento adicional: <strong>R$ ${faturamentoExtra.toFixed(0)}</strong></p>
+let velocimetro='';
 
-<p>👥 Clientes necessários: <strong>${clientes}</strong></p>
+let estrategia='';
 
-<p>🎯 Leads necessários: <strong>${leads}</strong></p>
+if(investimentoTotal<=1500){
 
-<p>📢 Investimento em anúncios: <strong>R$ ${investimentoAds.toFixed(0)}</strong></p>
+velocimetro='🟨 Conservador';
 
-<p>📅 Investimento semanal: <strong>R$ ${semanal.toFixed(0)}</strong></p>
+estrategia='💡 Crescimento gradual e validação do mercado.';
 
-<p>☀️ Investimento diário: <strong>R$ ${diario.toFixed(0)}</strong></p>
+}
+
+else if(investimentoTotal<=3500){
+
+velocimetro='🟩 Recomendado';
+
+estrategia='🚀 Cenário saudável para crescimento previsível.';
+
+}
+
+else{
+
+velocimetro='🟦 Acelerado';
+
+estrategia='🔥 Cenário ideal para escalar campanhas.';
+
+}
+
+document.getElementById('resultado').innerHTML=`
+
+<div class="resultado">
+
+<h2>📈 Cenário Projetado</h2>
+
+<p>💰 <strong>Faturamento adicional:</strong> R$ ${faturamentoExtra.toLocaleString('pt-BR')}</p>
+
+<p>👥 <strong>Clientes necessários:</strong> ${clientes}</p>
+
+<p>🎯 <strong>Leads necessários:</strong> ${leads}</p>
+
+<p>📢 <strong>Investimento em anúncios:</strong> R$ ${investimentoAds.toLocaleString('pt-BR')}</p>
+
+<p>📅 <strong>Investimento semanal:</strong> R$ ${investimentoSemanal.toLocaleString('pt-BR')}</p>
+
+<p>☀️ <strong>Investimento diário:</strong> R$ ${investimentoDiario.toLocaleString('pt-BR')}</p>
 
 <hr>
 
-<p>💼 Fee de gestão: <strong>R$ 800</strong></p>
+<p>💼 <strong>Gestão estratégica:</strong> R$ ${fee.toLocaleString('pt-BR')}</p>
 
-<p style="font-size:22px">
+<h2>🏆 Total mensal: R$ ${investimentoTotal.toLocaleString('pt-BR')}</h2>
 
-🏆 Total mensal: <strong>R$ ${total.toFixed(0)}</strong>
+<div class="velocimetro">
 
-</p>
+${velocimetro}
+
+</div>
+
+<p>${estrategia}</p>
+
+<div class="cta">
+
+🤝 Gostou deste planejamento?
+
+<br><br>
+
+O próximo passo é formalizar a parceria comercial.
+
+</div>
+
+</div>
 
 `;
 
 }
+```
