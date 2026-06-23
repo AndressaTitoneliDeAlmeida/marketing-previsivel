@@ -7,6 +7,70 @@
     <title>Formalização da Parceria Comercial</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<div id="modalDocumento" class="modal">
+
+    <div class="modal-conteudo">
+
+        <span class="fechar-modal" onclick="fecharModal()">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            🤝 Formalização da Parceria Comercial
+
+        </h2>
+
+        <iframe src="https://doc.clickup.com/90171269808/d/h/2kza0rng-717/d4b317e8a2237e6/2kza0rng-397" width="100%"
+            height="450" frameborder="0"></iframe>
+
+        <div class="check-item">
+
+            <input type="checkbox" id="modal1">
+
+            <label>
+
+                Confirmo que as informações fornecidas são verdadeiras.
+
+            </label>
+
+        </div>
+
+        <div class="check-item">
+
+            <input type="checkbox" id="modal2">
+
+            <label>
+
+                Estou ciente de que os acessos às plataformas permanecerão sob propriedade da minha empresa.
+
+            </label>
+
+        </div>
+
+        <div class="check-item">
+
+            <input type="checkbox" id="modal3">
+
+            <label>
+
+                Estou ciente de que os resultados dependem da colaboração entre as partes.
+
+            </label>
+
+        </div>
+
+        <button type="button" onclick="confirmarAceite()">
+
+            ✅ Confirmar aceite
+
+        </button>
+
+    </div>
+
+</div>
 
 <body>
     <div class="container">
@@ -95,19 +159,32 @@
                 necessários. </p>
             <hr>
             <h2>🚀 Antes de finalizar</h2>
-            <div class="check-item"> <input type="checkbox" id="declaracao1"> <label for="declaracao1"> Li e concordo
-                    com a Formalização da Parceria Comercial. </label> </div>
-            <div class="check-item"> <input type="checkbox" id="declaracao2"> <label for="declaracao2"> Confirmo que as
-                    informações fornecidas são verdadeiras. </label> </div>
-            <div class="check-item"> <input type="checkbox" id="declaracao3"> <label for="declaracao3"> Estou ciente de
-                    que os acessos às plataformas permanecerão sob propriedade da minha empresa. </label> </div>
-            <div class="check-item"> <input type="checkbox" id="declaracao4"> <label for="declaracao4"> Estou ciente de
-                    que os resultados dependem da colaboração entre as partes. </label> </div>
-            <div class="check-item"> <input type="checkbox" id="declaracao5"> <label for="declaracao5"> Autorizo o
-                    tratamento dos meus dados pessoais conforme a Lei Geral de Proteção de Dados (LGPD). </label> </div>
+
+            <div class="aceite-principal">
+
+                <label>
+
+                    <input type="checkbox" id="aceitePrincipal" disabled>
+
+                    Li e concordo com a Formalização da Parceria Comercial e autorizo o tratamento dos meus dados
+                    conforme a LGPD.
+
+                </label>
+
+            </div>
+
+            <button type="button" class="btn-documento" onclick="abrirModal()">
+
+                📄 Ler documento completo
+
+            </button>
             <div class="lgpd"> 🔒 Seus dados serão tratados de forma segura e utilizados exclusivamente para a
                 formalização, execução e comunicação da parceria comercial, em conformidade com a Lei nº 13.709/2018
-                (LGPD). </div> <button onclick="enviarParceria()"> 🚀 Formalizar parceria </button>
+                (LGPD).
+            </div>
+            <button onclick="enviarParceria()"> 🚀 Formalizar parceria
+
+            </button>
             <div id="mensagem"></div>
         </div>
         <footer> Desenvolvido por Andressa Titoneli </footer>
