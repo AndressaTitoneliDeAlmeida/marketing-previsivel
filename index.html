@@ -1,1 +1,154 @@
+<!DOCTYPE html>
 
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marketing Previsível | Planejador de Crescimento Empresarial</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h1>🚀 Marketing Previsível</h1>
+
+            <h2>Planejador de Crescimento Empresarial</h2>
+
+            <p>
+
+                Descubra quanto sua empresa pode crescer e receba uma estimativa inteligente de investimento em
+                anúncios, captação de clientes e estratégia comercial.
+
+            </p>
+
+            <p>
+
+                📌 Esta é uma simulação estratégica. Os valores apresentados servem como referência inicial e poderão
+                ser ajustados conforme a realidade da empresa.
+
+            </p>
+
+        </header>
+
+        <div class="card">
+
+            <h3>📊 Dados da empresa</h3>
+
+            <input type="number" id="faturamento" placeholder="Qual é o faturamento mensal atual da empresa? (R$)">
+
+            <select id="crescimento">
+
+                <option value="10">Quero crescer 10%</option>
+
+                <option value="20">Quero crescer 20%</option>
+
+                <option value="30">Quero crescer 30%</option>
+
+                <option value="50">Quero crescer 50%</option>
+
+                <option value="100">Quero dobrar o faturamento (100%)</option>
+
+            </select>
+
+            <select id="estagio">
+
+                <option value="1">🌱 Estou começando</option>
+
+                <option value="2">🚀 Já tenho alguns clientes</option>
+
+                <option value="3">🏢 Minha operação está estruturada</option>
+
+                <option value="4">👑 Quero escalar agressivamente</option>
+
+            </select>
+
+            <button onclick="calcular()">
+
+                🚀 Gerar meu planejamento
+
+            </button>
+
+        </div>
+
+        <div id="resultado"></div>
+
+        <div id="areaParceria" style="display:none;" class="card">
+
+            <h2>🚀 Como deseja continuar?</h2>
+
+            <p>
+
+                Escolha a forma mais confortável para seguir. Algumas empresas preferem tirar dúvidas antes. Outras
+                preferem iniciar imediatamente.
+
+            </p>
+
+            <div class="acoes-container">
+
+                <a class="botao-secundario" href="https://calendar.app.google/sFp8UvYjopZyAvs26" target="_blank">
+
+                    📅 Agendar reunião
+
+                </a>
+
+                <a class="botao-secundario whatsapp"
+                    href="https://wa.me/5519974281159?text=Olá,%20Andressa!%20👋%0A%0AConheci%20o%20Sistema%20Marketing%20Previsível™%20e%20gostaria%20de%20tirar%20algumas%20dúvidas%20sobre%20como%20aplicar%20essa%20estratégia%20na%20minha%20empresa."
+                    target="_blank">
+
+                    💬 Falar pelo WhatsApp
+
+                </a>
+
+                <div class="cta-crescimento">
+
+                    <h3>🚀 Quero acelerar o crescimento da minha empresa</h3>
+
+                    <p>
+
+                        Já conheço o potencial do Marketing Previsível™, entendi a estratégia e quero iniciar minha
+                        estruturação o quanto antes.
+
+                    </p>
+
+                    <button onclick="abrirFormularioAceite()">
+
+                        🔥 Quero começar agora
+
+                    </button>
+
+                    <p>
+
+                        Preencha seus dados e dê o primeiro passo para construir um crescimento previsível e
+                        sustentável.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+
+            Desenvolvido por Andressa Titoneli
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
