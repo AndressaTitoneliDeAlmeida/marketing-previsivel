@@ -664,9 +664,9 @@ footer {
 
 .acao-card {
 
-    flex: 1;
+    flex:1;
 
-    min-width: 300px;
+    min-width:280px;
 
     background: #ffffff;
 
@@ -798,11 +798,11 @@ footer {
 /* CARDS DA ÁREA DE CONTINUAÇÃO */
 /* ============================= */
 
-.cta-crescimento {
+.cta-crescimento{
 
-    flex: 1;
+    flex:1;
 
-    min-width: 300px;
+    min-width:280px;
 
     background: #ffffff;
 
