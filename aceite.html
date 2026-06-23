@@ -1,1 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formalização da Parceria Comercial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="modalDocumento" class="modal">
+
+        <div class="modal-conteudo">
+
+            <span class="fechar-modal" onclick="fecharModal()">
+
+                &times;
+
+            </span>
+
+            <h2>
+
+                🤝 Formalização da Parceria Comercial
+
+            </h2>
+
+            <iframe src="https://doc.clickup.com/90171269808/d/h/2kza0rng-717/d4b317e8a2237e6/2kza0rng-397" width="100%"
+                height="450" frameborder="0"></iframe>
+
+            <div class="check-item">
+
+                <input type="checkbox" id="modal1">
+
+                <label>
+
+                    Confirmo que as informações fornecidas são verdadeiras.
+
+                </label>
+
+            </div>
+
+            <div class="check-item">
+
+                <input type="checkbox" id="modal2">
+
+                <label>
+
+                    Estou ciente de que os acessos às plataformas permanecerão sob propriedade da minha empresa.
+
+                </label>
+
+            </div>
+
+            <div class="check-item">
+
+                <input type="checkbox" id="modal3">
+
+                <label>
+
+                    Estou ciente de que os resultados dependem da colaboração entre as partes.
+
+                </label>
+
+            </div>
+
+            <button type="button" onclick="confirmarAceite()">
+
+                ✅ Confirmar aceite
+
+            </button>
+
+        </div>
+
+    </div>
+    <div class="container">
+        <header>
+            <h1>🤝 Formalização da Parceria Comercial</h1>
+            <h2>Estamos a um passo de iniciar o crescimento da sua empresa.</h2>
+        </header>
+        <div class="card">
+
+            <h3>📌 Jornada do crescimento</h3>
+
+            <div class="barra-processo">
+
+                <div class="etapa concluido" title="🧠 Conheça o Sistema Marketing Previsível™">
+
+                    🧠
+
+                </div>
+
+                <div class="linha concluido"></div>
+
+                <div class="etapa concluido" title="🚀 Como empresas crescem de forma estratégica">
+
+                    🚀
+
+                </div>
+
+                <div class="linha concluido"></div>
+
+                <div class="etapa concluido" title="📊 Planejador de Crescimento Empresarial">
+
+                    📊
+
+                </div>
+
+                <div class="linha concluido"></div>
+
+                <div class="etapa concluido" title="📈 Cenário Projetado">
+
+                    📈
+
+                </div>
+
+                <div class="linha atual"></div>
+
+                <div class="etapa atual" title="🤝 Formalização da parceria">
+
+                    🤝
+
+                </div>
+
+                <div class="linha futuro"></div>
+
+                <div class="etapa futuro" title="🔍 Análise interna">
+
+                    🔍
+
+                </div>
+
+                <div class="linha futuro"></div>
+
+                <div class="etapa futuro" title="🚀 Início do projeto">
+
+                    🚀
+
+                </div>
+
+            </div>
+
+        </div>
+        <div id="planejamento" class="card"></div>
+        <div class="card">
+            <h2>👤 Dados do responsável</h2>
+            <p class="observacao"> ℹ️ Os campos marcados com <span class="obrigatorio">*</span> são obrigatórios. </p>
+            <input type="text" id="nome" placeholder="Nome completo do responsável *"> <input type="email" id="email"
+                placeholder="E-mail *"> <input type="text" id="whatsapp" placeholder="WhatsApp *">
+            <h2>🏢 Dados da empresa</h2> <input type="text" id="empresa" placeholder="Nome da empresa *"> <input
+                type="text" id="cnpj" placeholder="CNPJ *"> <input type="text" id="instagram"
+                placeholder="Instagram (opcional)"> <input type="text" id="cidade" placeholder="Cidade *"> <input
+                type="text" id="estado" placeholder="Estado *"> <input type="text" id="pais" value="Brasil" readonly>
+            <hr>
+            <h2>📄 Resumo da contratação</h2>
+            <p> 📊 O planejamento estratégico apresentado anteriormente servirá como referência inicial para a
+                construção da estratégia personalizada da sua empresa. </p>
+            <p> 📅 O início das atividades ocorrerá após a validação da parceria e a disponibilização dos acessos
+                necessários. </p>
+            <hr>
+            <h2>🚀 Antes de finalizar</h2>
+            <div class="aceite-principal">
+
+                <label>
+
+                    <input type="checkbox" id="aceitePrincipal" disabled>
+
+                    Li e concordo com a Formalização da Parceria Comercial e autorizo o tratamento dos meus dados
+                    conforme a LGPD.
+
+                </label>
+
+            </div>
+
+            <button type="button" class="btn-documento" onclick="abrirModal()">
+
+                📄 Ler documento completo
+
+            </button>
+            <div class="lgpd"> 🔒 Seus dados serão tratados de forma segura e utilizados exclusivamente para a
+                formalização, execução e comunicação da parceria comercial, em conformidade com a Lei nº 13.709/2018
+                (LGPD).
+            </div>
+            <button onclick="enviarParceria()"> 🚀 Formalizar parceria
+
+            </button>
+            <div id="mensagem"></div>
+        </div>
+        <footer> Desenvolvido por Andressa Titoneli </footer>
+    </div>
+    <script>
+
+        const planejamento = JSON.parse(
+            localStorage.getItem("planejamentoMarketing")
+        );
+
+        if (planejamento) {
+
+            document.getElementById("planejamento").innerHTML = `
+
+    <h2>📊 Resumo do seu planejamento estratégico</h2>
+
+    <p>💰 Faturamento atual: <strong>R$ ${planejamento.faturamento}</strong></p>
+
+    <p>🎯 Meta de crescimento: <strong>${planejamento.crescimento}%</strong></p>
+
+    <p>📈 Faturamento adicional projetado: <strong>R$ ${planejamento.faturamentoExtra}</strong></p>
+
+    <p>👥 Clientes necessários: <strong>${planejamento.clientes}</strong></p>
+
+    <p>🎯 Leads necessários: <strong>${planejamento.leads}</strong></p>
+
+    <p>📢 Investimento em anúncios: <strong>R$ ${planejamento.anuncios}</strong></p>
+
+    <p>👩‍💻 Investimento na sua especialista em Tráfego Pago: <strong>R$ ${planejamento.fee}</strong></p>
+
+    <p>🏆 Investimento total recomendado: <strong>R$ ${planejamento.investimentoTotal}</strong></p>
+
+    <p>⭐ Pontuação estratégica: <strong>${planejamento.pontuacao}/100</strong></p>
+
+    <p>🚀 Potencial identificado: <strong>${planejamento.potencial}</strong></p>
+
+    `;
+
+        }
+
+        document.getElementById("whatsapp").addEventListener("input", function (e) {
+
+            let valor = e.target.value.replace(/\D/g, "");
+
+            valor = valor.replace(/^(\d{2})(\d)/, "($1) $2");
+
+            valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
+
+            e.target.value = valor;
+
+        });
+
+        document.getElementById("cnpj").addEventListener("input", function (e) {
+
+            let valor = e.target.value.replace(/\D/g, "");
+
+            valor = valor.replace(/^(\d{2})(\d)/, "$1.$2");
+
+            valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+
+            valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2");
+
+            valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
+
+            e.target.value = valor;
+
+        });
+
+        function abrirModal() {
+
+            document.getElementById("modalDocumento").style.display = "flex";
+
+        }
+
+        function fecharModal() {
+
+            document.getElementById("modalDocumento").style.display = "none";
+
+        }
+
+        function confirmarAceite() {
+
+            if (
+
+                !document.getElementById("modal1").checked ||
+
+                !document.getElementById("modal2").checked ||
+
+                !document.getElementById("modal3").checked
+
+            ) {
+
+                alert(
+
+                    "É obrigatório ler o documento e confirmar todos os aceites."
+
+                );
+
+                return;
+
+            }
+
+            document.getElementById("aceitePrincipal").checked = true;
+
+            fecharModal();
+
+        }
+
+        async function enviarParceria() {
+
+            const nome = document.getElementById("nome").value;
+
+            const email = document.getElementById("email").value;
+
+            const whatsapp = document.getElementById("whatsapp").value;
+
+            const empresa = document.getElementById("empresa").value;
+
+            const cnpj = document.getElementById("cnpj").value;
+
+            const instagram = document.getElementById("instagram").value;
+
+            const cidade = document.getElementById("cidade").value;
+
+            const estado = document.getElementById("estado").value;
+
+            const pais = document.getElementById("pais").value;
+
+            if (
+
+                !nome ||
+
+                !email ||
+
+                !whatsapp ||
+
+                !empresa ||
+
+                !cnpj ||
+
+                !cidade ||
+
+                !estado
+
+            ) {
+
+                alert("Preencha todos os campos obrigatórios.");
+
+                return;
+
+            }
+
+            if (
+
+                !document.getElementById("aceitePrincipal").checked
+
+            ) {
+
+                alert(
+
+                    "É obrigatório ler o documento e confirmar os aceites antes de continuar."
+
+                );
+
+                return;
+
+            }
+
+            const dados = {
+
+                ...planejamento,
+
+                nome,
+
+                email,
+
+                whatsapp,
+
+                empresa,
+
+                cnpj,
+
+                instagram,
+
+                cidade,
+
+                estado,
+
+                pais
+
+            };
+
+            try {
+
+                await fetch(
+
+                    "https://n8n-production-327ae.up.railway.app/webhook/aceite-parceria",
+
+                    {
+
+                        method: "POST",
+
+                        headers: {
+
+                            "Content-Type": "application/json"
+
+                        },
+
+                        body: JSON.stringify(dados)
+
+                    }
+
+                );
+
+                document.getElementById("mensagem").innerHTML = `
+
+        <h2>✅ Parceria formalizada com sucesso</h2>
+
+        <p>
+
+        Recebi suas informações e em breve entrarei em contato para iniciarmos sua estratégia.
+
+        </p>
+
+        `;
+
+            }
+
+            catch {
+
+                document.getElementById("mensagem").innerHTML = `
+
+        <h2>❌ Ocorreu um erro</h2>
+
+        <p>
+
+        Tente novamente em alguns instantes.
+
+        </p>
+
+        `;
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
