@@ -678,7 +678,7 @@ footer {
 
     text-align: center;
 
-    transition: 0.3s;
+    transition: .3s;
 
     border: 2px solid transparent;
 
@@ -688,7 +688,7 @@ footer {
 
     transform: translateY(-6px);
 
-    box-shadow: 0 18px 35px rgba(109, 40, 217, 0.18);
+    box-shadow: 0 18px 35px rgba(109, 40, 217, .18);
 
     border: 2px solid #6d28d9;
 
