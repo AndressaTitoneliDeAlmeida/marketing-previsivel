@@ -664,9 +664,9 @@ footer {
 
 .acao-card {
 
-    flex:1;
+    flex: 1;
 
-    min-width:280px;
+    min-width: 280px;
 
     background: #ffffff;
 
@@ -798,11 +798,11 @@ footer {
 /* CARDS DA ÁREA DE CONTINUAÇÃO */
 /* ============================= */
 
-.cta-crescimento{
+.cta-crescimento {
 
-    flex:1;
+    flex: 1;
 
-    min-width:280px;
+    min-width: 280px;
 
     background: #ffffff;
 
@@ -879,5 +879,71 @@ footer {
     border: 2px solid #6d28d9;
 
     box-shadow: 0 18px 35px rgba(109, 40, 217, .18);
+
+}
+
+/* ============================= */
+/* HEADER PREMIUM */
+/* ============================= */
+
+.logo-topo {
+
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    background: #f3e8ff;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    color: #6d28d9;
+
+    margin-bottom: 20px;
+
+    font-size: 18px;
+
+}
+
+.beneficios {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+}
+
+.beneficios div {
+
+    background: #ffffff;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+
+    font-weight: 600;
+
+}
+
+@media(max-width:768px) {
+
+    .beneficios {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .logo-topo {
+
+        font-size: 16px;
+
+    }
 
 }
