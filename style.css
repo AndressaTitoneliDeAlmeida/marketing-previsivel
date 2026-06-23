@@ -750,7 +750,45 @@ footer {
 
     .acoes-container {
 
+        display: flex;
+
         flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+    .acao-card {
+
+        min-width: 100%;
+
+        width: 100%;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+
+    }
+
+    .cta-crescimento {
+
+        min-width: 100%;
+
+        width: 100%;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+
+    }
+
+    .botao-card {
+
+        width: 100%;
+
+        font-size: 16px;
+
+        padding: 14px;
 
     }
 
