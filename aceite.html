@@ -206,7 +206,75 @@
         </div>
         <footer> Desenvolvido por Andressa Titoneli </footer>
     </div>
-    <script> const planejamento = JSON.parse(localStorage.getItem("planejamentoMarketing")); if (planejamento) { document.getElementById("planejamento").innerHTML = <h2>📊 Resumo do seu planejamento estratégico</h2> <p>💰 Faturamento atual: <strong>R$ ${planejamento.faturamento}</strong></p> <p>🎯 Meta de crescimento: <strong>${planejamento.crescimento}%</strong></p> <p>📈 Faturamento adicional projetado: <strong>R$ ${planejamento.faturamentoExtra}</strong></p> <p>👥 Clientes necessários: <strong>${planejamento.clientes}</strong></p> <p>🎯 Leads necessários: <strong>${planejamento.leads}</strong></p> <p>📢 Investimento em anúncios: <strong>R$ ${planejamento.anuncios}</strong></p> <p>👩‍💻 Investimento na sua especialista em Tráfego Pago: <strong>R$ ${planejamento.fee}</strong></p> <p>🏆 Investimento total recomendado: <strong>R$ ${planejamento.investimentoTotal}</strong></p> <p>⭐ Pontuação estratégica: <strong>${planejamento.pontuacao}/100</strong></p> <p>🚀 Potencial identificado: <strong>${planejamento.potencial}</strong></p>; } document.getElementById("whatsapp").addEventListener("input", function (e) { let valor = e.target.value.replace(/\D/g, ""); valor = valor.replace(/^(\d{2})(\d)/, "($1) $2"); valor = valor.replace(/(\d{5})(\d)/, "$1-$2"); e.target.value = valor; }); document.getElementById("cnpj").addEventListener("input", function (e) { let valor = e.target.value.replace(/\D/g, ""); valor = valor.replace(/^(\d{2})(\d)/, "$1.$2"); valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3"); valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2"); valor = valor.replace(/(\d{4})(\d)/, "$1-$2"); e.target.value = valor; }); async function enviarParceria() { const nome = document.getElementById("nome").value; const email = document.getElementById("email").value; const whatsapp = document.getElementById("whatsapp").value; const empresa = document.getElementById("empresa").value; const cnpj = document.getElementById("cnpj").value; const instagram = document.getElementById("instagram").value; const cidade = document.getElementById("cidade").value; const estado = document.getElementById("estado").value; const pais = document.getElementById("pais").value; if (!nome || !email || !whatsapp || !empresa || !cnpj || !cidade || !estado) { alert("Preencha todos os campos obrigatórios."); return; } if (!document.getElementById("declaracao1").checked || !document.getElementById("declaracao2").checked || !document.getElementById("declaracao3").checked || !document.getElementById("declaracao4").checked || !document.getElementById("declaracao5").checked) { alert("Confirme todas as informações antes de continuar."); return; } const dados = { ...planejamento, nome, email, whatsapp, empresa, cnpj, instagram, cidade, estado, pais }; try { await fetch("https://n8n-production-327ae.up.railway.app/webhook/aceite-parceria", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(dados) }); document.getElementById("mensagem").innerHTML = <h2>✅ Parceria formalizada com sucesso</h2> <p> Recebi suas informações e em breve entrarei em contato para iniciarmos sua estratégia. </p>; } catch { document.getElementById("mensagem").innerHTML = <h2>❌ Ocorreu um erro</h2> <p> Tente novamente em alguns instantes. </p>; } } </script>
+    <script> const planejamento = JSON.parse(localStorage.getItem("planejamentoMarketing")); if (planejamento) { document.getElementById("planejamento").innerHTML = <h2>📊 Resumo do seu planejamento estratégico</h2> <p>💰 Faturamento atual: <strong>R$ ${planejamento.faturamento}</strong></p> <p>🎯 Meta de crescimento: <strong>${planejamento.crescimento}%</strong></p> <p>📈 Faturamento adicional projetado: <strong>R$ ${planejamento.faturamentoExtra}</strong></p> <p>👥 Clientes necessários: <strong>${planejamento.clientes}</strong></p> <p>🎯 Leads necessários: <strong>${planejamento.leads}</strong></p> <p>📢 Investimento em anúncios: <strong>R$ ${planejamento.anuncios}</strong></p> <p>👩‍💻 Investimento na sua especialista em Tráfego Pago: <strong>R$ ${planejamento.fee}</strong></p> <p>🏆 Investimento total recomendado: <strong>R$ ${planejamento.investimentoTotal}</strong></p> <p>⭐ Pontuação estratégica: <strong>${planejamento.pontuacao}/100</strong></p> <p>🚀 Potencial identificado: <strong>${planejamento.potencial}</strong></p>; } document.getElementById("whatsapp").addEventListener("input", function (e) { let valor = e.target.value.replace(/\D/g, ""); valor = valor.replace(/^(\d{2})(\d)/, "($1) $2"); valor = valor.replace(/(\d{5})(\d)/, "$1-$2"); e.target.value = valor; }); document.getElementById("cnpj").addEventListener("input", function (e) { let valor = e.target.value.replace(/\D/g, ""); valor = valor.replace(/^(\d{2})(\d)/, "$1.$2"); valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3"); valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2"); valor = valor.replace(/(\d{4})(\d)/, "$1-$2"); e.target.value = valor; }); function abrirModal() {
+
+            document.getElementById("modalDocumento").style.display = "flex";
+
+        }
+
+        function fecharModal() {
+
+            document.getElementById("modalDocumento").style.display = "none";
+
+        }
+
+        function confirmarAceite() {
+
+            if (
+
+                !document.getElementById("modal1").checked ||
+
+                !document.getElementById("modal2").checked ||
+
+                !document.getElementById("modal3").checked
+
+            ) {
+
+                alert(
+
+                    "É obrigatório ler o documento e confirmar todos os aceites."
+
+                );
+
+                return;
+
+            }
+
+            document.getElementById("aceitePrincipal").checked = true;
+
+            fecharModal();
+
+        } async function enviarParceria() {
+            const nome = document.getElementById("nome").value; const email = document.getElementById("email").value; const whatsapp = document.getElementById("whatsapp").value; const empresa = document.getElementById("empresa").value; const cnpj = document.getElementById("cnpj").value; const instagram = document.getElementById("instagram").value; const cidade = document.getElementById("cidade").value; const estado = document.getElementById("estado").value; const pais = document.getElementById("pais").value; if (!nome || !email || !whatsapp || !empresa || !cnpj || !cidade || !estado) { alert("Preencha todos os campos obrigatórios."); return; } if (
+
+
+
+                !document.getElementById("aceitePrincipal").checked
+
+
+
+            ) {
+
+
+
+                alert(
+
+
+
+                    "É obrigatório ler o documento e confirmar os aceites antes de continuar."
+
+
+
+                );
+
+
+
+                return;
+
+
+
+            } const dados = { ...planejamento, nome, email, whatsapp, empresa, cnpj, instagram, cidade, estado, pais }; try { await fetch("https://n8n-production-327ae.up.railway.app/webhook/aceite-parceria", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(dados) }); document.getElementById("mensagem").innerHTML = <h2>✅ Parceria formalizada com sucesso</h2> <p> Recebi suas informações e em breve entrarei em contato para iniciarmos sua estratégia. </p>; } catch { document.getElementById("mensagem").innerHTML = <h2>❌ Ocorreu um erro</h2> <p> Tente novamente em alguns instantes. </p>; }
+        } </script>
 </body>
 
 </html>
