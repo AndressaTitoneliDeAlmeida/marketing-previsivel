@@ -755,3 +755,91 @@ footer {
     }
 
 }
+
+/* ============================= */
+/* CARDS DA ÁREA DE CONTINUAÇÃO */
+/* ============================= */
+
+.cta-crescimento {
+
+    flex: 1;
+
+    min-width: 300px;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+    text-align: center;
+
+    border: 2px solid transparent;
+
+    transition: .3s;
+
+}
+
+.cta-crescimento:hover {
+
+    transform: translateY(-6px);
+
+    border: 2px solid #6d28d9;
+
+    box-shadow: 0 18px 35px rgba(109, 40, 217, .18);
+
+}
+
+/* remove qualquer contorno fixo */
+
+.cta-crescimento button {
+
+    border: none !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+}
+
+.cta-crescimento button:hover {
+
+    border: none !important;
+
+}
+
+/* card agendar reunião */
+
+.card-agendar {
+
+    flex: 1;
+
+    min-width: 300px;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+    text-align: center;
+
+    border: 2px solid transparent;
+
+    transition: .3s;
+
+}
+
+.card-agendar:hover {
+
+    transform: translateY(-6px);
+
+    border: 2px solid #6d28d9;
+
+    box-shadow: 0 18px 35px rgba(109, 40, 217, .18);
+
+}
