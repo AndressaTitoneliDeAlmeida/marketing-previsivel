@@ -649,3 +649,107 @@ footer {
     }
 
 }
+
+.acoes-container {
+
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+.acao-card {
+
+    flex: 1;
+
+    min-width: 300px;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+
+    transition: 0.3s;
+
+    border: 2px solid transparent;
+
+}
+
+.acao-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+
+}
+
+.destaque {
+
+    border: 2px solid #6d28d9;
+
+    background: #faf7ff;
+
+}
+
+.icone-card {
+
+    font-size: 50px;
+
+    margin-bottom: 15px;
+
+}
+
+.botao-card {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 16px 25px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #6d28d9;
+
+    color: #fff;
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+}
+
+.botao-card:hover {
+
+    background: #5b21b6;
+
+    transform: translateY(-2px);
+
+}
+
+@media(max-width:768px) {
+
+    .acoes-container {
+
+        flex-direction: column;
+
+    }
+
+}
