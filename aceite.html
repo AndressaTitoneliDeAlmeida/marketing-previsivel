@@ -288,11 +288,19 @@
 
             fecharModal();
 
-            alert(
+            if (
 
-                "✅ Documento confirmado, agora marque o aceite Li e concordo com a Formalização da Parceria Comercial e autorizo o tratamento dos meus dados conforme a LGPD, antes de formalizar a parceria."
+                !document.getElementById("aceitePrincipal").checked
 
-            );
+            ) {
+
+                alert(
+
+                    "✅ Documento confirmado. Agora marque o aceite 'Li e concordo com a Formalização da Parceria Comercial e autorizo o tratamento dos meus dados conforme a LGPD' antes de formalizar a parceria."
+
+                );
+
+            }
 
         }
 
