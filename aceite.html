@@ -433,24 +433,14 @@
                 if (!documentoCompleto) {
 
                     mostrarNotificacao(
-
-                        "📖 É necessário ler o documento até o final antes de continuar.",
-
+                        `
+                        📖 É necessário ler o documento até o final antes de continuar.
+                        ☑ Após a leitura completa, marque os dois termos obrigatórios.
+                        `,
                         "notificacao-erro"
-
                     );
 
-                    setTimeout(() => {
-
-                        mostrarNotificacao(
-
-                            "☑ Após a leitura completa, marque os dois termos obrigatórios.",
-
-                            "notificacao-erro"
-
-                        );
-
-                    }, 800);
+                    return;
 
                     return;
 
