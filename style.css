@@ -1553,3 +1553,22 @@ footer {
     z-index: 99999;
     display: none;
 }
+
+#notificacaoErro,
+#notificacaoAviso {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.notificacao-erro {
+    background: #dc2626;
+    color: white;
+}
+
+.notificacao-aviso {
+    background: #f59e0b;
+    color: white;
+}
