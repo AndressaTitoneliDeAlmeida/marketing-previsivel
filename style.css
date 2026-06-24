@@ -1281,3 +1281,171 @@ footer {
     background: #15803d;
 
 }
+
+/* ===== MODAL ===== */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    z-index: 9999;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ===== CAIXA DO MODAL ===== */
+
+.modal-conteudo {
+
+    background: #ffffff;
+
+    width: 100%;
+
+    max-width: 950px;
+
+    height: 90vh;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* ===== BOTÃO FECHAR ===== */
+
+.fechar-modal {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: #666;
+
+}
+
+.fechar-modal:hover {
+
+    color: #000;
+
+}
+
+
+/* ===== DOCUMENTO ===== */
+
+.documento-scroll {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px;
+
+    margin: 20px 0;
+
+    border: 1px solid #ddd;
+
+    border-radius: 15px;
+
+    background: #fafafa;
+
+    line-height: 1.8;
+
+}
+
+
+/* ===== FIM DO DOCUMENTO ===== */
+
+#fimDocumento {
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #16a34a;
+
+    padding: 30px;
+
+}
+
+
+/* ===== CHECKBOX ===== */
+
+.check-item {
+
+    margin: 10px 0;
+
+    font-size: 16px;
+
+}
+
+
+/* ===== BOTÃO CONFIRMAR ===== */
+
+#btnConfirmarAceite {
+
+    background: #16a34a;
+
+    color: #fff;
+
+    border: none;
+
+    padding: 18px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    margin-top: 15px;
+
+}
+
+#btnConfirmarAceite:hover {
+
+    background: #15803d;
+
+}
