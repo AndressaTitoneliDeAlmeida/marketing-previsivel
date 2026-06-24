@@ -13,7 +13,7 @@
 
         <div class="modal-conteudo">
 
-            <span class="fechar-modal">
+            <span class="fechar-modal" onclick="fecharModal()">
 
                 &times;
 
@@ -138,7 +138,7 @@
 
             <div class="check-item">
 
-                <input type="checkbox" id="modal1" disabled>
+                <input type="checkbox" id="modal1">
 
                 <label>
 
@@ -150,7 +150,7 @@
 
             <div class="check-item">
 
-                <input type="checkbox" id="modal2" disabled>
+                <input type="checkbox" id="modal2">
 
                 <label>
 
@@ -162,7 +162,7 @@
 
             <div class="check-item">
 
-                <input type="checkbox" id="modal3" disabled>
+                <input type="checkbox" id="modal3">
 
                 <label>
 
@@ -346,6 +346,25 @@
         });
 
         document.getElementById("cnpj").addEventListener("input", function (e) {
+            function abrirModal() {
+
+                document.getElementById(
+                    "modalDocumento"
+                ).style.display = "flex";
+
+                document.body.style.overflow = "hidden";
+
+            }
+
+            function fecharModal() {
+
+                document.getElementById(
+                    "modalDocumento"
+                ).style.display = "none";
+
+                document.body.style.overflow = "auto";
+
+            }
 
             let valor = e.target.value.replace(/\D/g, "");
 
@@ -361,19 +380,12 @@
 
 
         });
-        function abrirModal() {
-
-            document.getElementById(
-
-                "modalDocumento"
-
-            ).style.display = "flex";
-
-        }
 
         let documentoCompleto = false;
 
         document.addEventListener("DOMContentLoaded", () => {
+
+            localStorage.removeItem("documentoLido");
 
             const documento = document.getElementById("conteudoDocumento");
 
@@ -394,6 +406,7 @@
                 }
 
             });
+
             document.getElementById(
 
                 "btnConfirmarAceite"
@@ -449,6 +462,7 @@
             });
 
         });
+
         async function enviarParceria() {
 
             const nome = document.getElementById("nome").value;
