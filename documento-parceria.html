@@ -209,14 +209,101 @@
         <p style="color:red;"> Qualquer demanda adicional poderá ser orçada separadamente. </p>
         <h2>9. Comunicação</h2>
         <div class="box"> 📱 WhatsApp <br> 📧 E-mail <br> 📅 Reuniões agendadas <br><br> Prazo médio de resposta:
-            <strong>até 24 horas úteis.</strong> </div>
+            <strong>até 24 horas úteis.</strong>
+        </div>
         <hr>
-        <div class="importante"> Uma estratégia de tráfego pago não substitui um bom produto, um bom atendimento e um
-            bom posicionamento. Ela potencializa aquilo que já existe. </div>
-        <div class="botao-final"> <button onclick="confirmarLeitura()"> ✅ Confirmar leitura do documento </button>
+        <div class="importante">
+            Uma estratégia de tráfego pago não substitui um bom produto, um bom atendimento e um
+            bom posicionamento. Ela potencializa aquilo que já existe.
+        </div>
+        <div class="botao-final">
+            <button onclick="confirmarLeitura()">
+                ✅ Confirmar leitura do documento
+            </button>
+            <div id="mensagemLeitura"></div>
         </div>
     </div>
-    <script> function confirmarLeitura(){ localStorage.setItem("documentoLido","true"); alert("Documento lido com sucesso."); window.close(); } </script>
+    <script>
+
+        let documentoLido = false;
+
+        window.addEventListener(
+
+            "scroll",
+
+            function () {
+
+                const alturaPagina =
+
+                    document.documentElement.scrollHeight;
+
+                const posicaoAtual =
+
+                    window.innerHeight +
+
+                    window.scrollY;
+
+                if (
+
+                    posicaoAtual >=
+
+                    alturaPagina - 50
+
+                ) {
+
+                    documentoLido = true;
+
+                }
+
+            }
+
+        );
+
+        function confirmarLeitura() {
+
+            if (
+
+                !documentoLido
+
+            ) {
+
+                document.getElementById(
+
+                    "mensagemLeitura"
+
+                ).innerHTML = `
+
+        <div class="alerta-leitura">
+
+        ⚠️ É obrigatório ler o documento até o final antes de confirmar a leitura.
+
+        </div>
+
+        `;
+
+                return;
+
+            }
+
+            localStorage.setItem(
+
+                "documentoLido",
+
+                "sim"
+
+            );
+
+            alert(
+
+                "✅ Documento lido com sucesso."
+
+            );
+
+            window.close();
+
+        }
+
+    </script>
 </body>
 
 </html>
