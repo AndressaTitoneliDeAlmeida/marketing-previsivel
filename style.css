@@ -1513,3 +1513,35 @@ footer {
     }
 
 }
+
+.check-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin: 18px 0;
+
+    font-size: 18px;
+
+}
+
+.check-item input {
+
+    width: 22px;
+
+    height: 22px;
+
+    cursor: pointer;
+
+}
+
+.check-item input:disabled {
+
+    cursor: not-allowed;
+
+    opacity: .5;
+
+}
