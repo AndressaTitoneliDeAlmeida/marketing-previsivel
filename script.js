@@ -1,239 +1,239 @@
 function calcular() {
 
-let faturamento = Number(document.getElementById("faturamento").value);
+    let faturamento = Number(document.getElementById("faturamento").value);
 
-let crescimento = Number(document.getElementById("crescimento").value);
+    let crescimento = Number(document.getElementById("crescimento").value);
 
-let estagio = Number(document.getElementById("estagio").value);
+    let estagio = Number(document.getElementById("estagio").value);
 
-if (faturamento <= 0) {
+    if (faturamento <= 0) {
 
-alert("Informe o faturamento mensal da empresa.");
+        alert("Informe o faturamento mensal da empresa.");
 
-return;
+        return;
 
-}
+    }
 
-let ticket;
-let conversao;
-let cpl;
+    let ticket;
+    let conversao;
+    let cpl;
 
-if (estagio == 1) {
+    if (estagio == 1) {
 
-ticket = 150;
-conversao = 5;
-cpl = 5;
+        ticket = 150;
+        conversao = 5;
+        cpl = 5;
 
-}
+    }
 
-else if (estagio == 2) {
+    else if (estagio == 2) {
 
-ticket = 250;
-conversao = 7;
-cpl = 8;
+        ticket = 250;
+        conversao = 7;
+        cpl = 8;
 
-}
+    }
 
-else if (estagio == 3) {
+    else if (estagio == 3) {
 
-ticket = 400;
-conversao = 10;
-cpl = 12;
+        ticket = 400;
+        conversao = 10;
+        cpl = 12;
 
-}
+    }
 
-else if (estagio == 4) {
+    else if (estagio == 4) {
 
-ticket = 700;
-conversao = 12;
-cpl = 18;
+        ticket = 700;
+        conversao = 12;
+        cpl = 18;
 
-}
+    }
 
-let nomeEstagio = "";
+    let nomeEstagio = "";
 
-if (estagio == 1) {
+    if (estagio == 1) {
 
-nomeEstagio = "🌱 Estou começando";
+        nomeEstagio = "🌱 Estou começando";
 
-}
+    }
 
-else if (estagio == 2) {
+    else if (estagio == 2) {
 
-nomeEstagio = "🚀 Já tenho alguns clientes";
+        nomeEstagio = "🚀 Já tenho alguns clientes";
 
-}
+    }
 
-else if (estagio == 3) {
+    else if (estagio == 3) {
 
-nomeEstagio = "🏢 Minha operação está estruturada";
+        nomeEstagio = "🏢 Minha operação está estruturada";
 
-}
+    }
 
-else if (estagio == 4) {
+    else if (estagio == 4) {
 
-nomeEstagio = "👑 Quero escalar agressivamente";
+        nomeEstagio = "👑 Quero escalar agressivamente";
 
-}
+    }
 
-let faturamentoExtra = faturamento * (crescimento / 100);
+    let faturamentoExtra = faturamento * (crescimento / 100);
 
-let clientes = Math.ceil(faturamentoExtra / ticket);
+    let clientes = Math.ceil(faturamentoExtra / ticket);
 
-let leads = Math.ceil(clientes / (conversao / 100));
+    let leads = Math.ceil(clientes / (conversao / 100));
 
-let anuncios = Math.ceil(leads * cpl);
+    let anuncios = Math.ceil(leads * cpl);
 
-let semanal = Math.ceil(anuncios / 4);
+    let semanal = Math.ceil(anuncios / 4);
 
-let diario = Math.ceil(anuncios / 30);
+    let diario = Math.ceil(anuncios / 30);
 
-let fee = 800;
+    let fee = 800;
 
-if (anuncios < 300) {
+    if (anuncios < 300) {
 
-fee = 150;
+        fee = 150;
 
-}
+    }
 
-else if (anuncios < 600) {
+    else if (anuncios < 600) {
 
-fee = 300;
+        fee = 300;
 
-}
+    }
 
-else if (anuncios < 1000) {
+    else if (anuncios < 1000) {
 
-fee = 500;
+        fee = 500;
 
-}
+    }
 
-let investimentoTotal = anuncios + fee;
+    let investimentoTotal = anuncios + fee;
 
-let barra = 30;
+    let barra = 30;
 
-let cor = "#facc15";
+    let cor = "#facc15";
 
-let nivel = "🟨 Baixo investimento";
+    let nivel = "🟨 Baixo investimento";
 
-if (investimentoTotal >= 600) {
+    if (investimentoTotal >= 600) {
 
-barra = 60;
+        barra = 60;
 
-cor = "#22c55e";
+        cor = "#22c55e";
 
-nivel = "🟩 Investimento recomendado";
+        nivel = "🟩 Investimento recomendado";
 
-}
+    }
 
-if (investimentoTotal >= 1500) {
+    if (investimentoTotal >= 1500) {
 
-barra = 100;
+        barra = 100;
 
-cor = "#3b82f6";
+        cor = "#3b82f6";
 
-nivel = "🟦 Investimento agressivo";
+        nivel = "🟦 Investimento agressivo";
 
-}
+    }
 
-let pontuacao = 60;
+    let pontuacao = 60;
 
-if (estagio >= 2) {
+    if (estagio >= 2) {
 
-pontuacao += 10;
+        pontuacao += 10;
 
-}
+    }
 
-if (estagio >= 3) {
+    if (estagio >= 3) {
 
-pontuacao += 10;
+        pontuacao += 10;
 
-}
+    }
 
-if (estagio >= 4) {
+    if (estagio >= 4) {
 
-pontuacao += 10;
+        pontuacao += 10;
 
-}
+    }
 
-if (faturamento >= 10000) {
+    if (faturamento >= 10000) {
 
-pontuacao += 10;
+        pontuacao += 10;
 
-}
+    }
 
-let potencial = "Em desenvolvimento";
+    let potencial = "Em desenvolvimento";
 
-let escala = "Necessita estruturação";
+    let escala = "Necessita estruturação";
 
-let recomendacao = "Sua empresa ainda está em fase de estruturação.";
+    let recomendacao = "Sua empresa ainda está em fase de estruturação.";
 
-if (pontuacao >= 80) {
+    if (pontuacao >= 80) {
 
-potencial = "Alto potencial";
+        potencial = "Alto potencial";
 
-escala = "Pronta para escalar";
+        escala = "Pronta para escalar";
 
-recomendacao = "Sua empresa apresenta um excelente potencial de crescimento.";
+        recomendacao = "Sua empresa apresenta um excelente potencial de crescimento.";
 
-}
+    }
 
-const planejamento = {
+    const planejamento = {
 
-dataSimulacao: new Date().toLocaleString("pt-BR"),
+        dataSimulacao: new Date().toLocaleString("pt-BR"),
 
-origem: "Marketing Previsível",
+        origem: "Marketing Previsível",
 
-servico: "Gestão de Tráfego Pago",
+        servico: "Gestão de Tráfego Pago",
 
-faturamento,
+        faturamento,
 
-crescimento,
+        crescimento,
 
-estagio,
+        estagio,
 
-nomeEstagio,
+        nomeEstagio,
 
-faturamentoExtra,
+        faturamentoExtra,
 
-clientes,
+        clientes,
 
-leads,
+        leads,
 
-anuncios,
+        anuncios,
 
-semanal,
+        semanal,
 
-diario,
+        diario,
 
-fee,
+        fee,
 
-investimentoTotal,
+        investimentoTotal,
 
-pontuacao,
+        pontuacao,
 
-potencial,
+        potencial,
 
-escala,
+        escala,
 
-recomendacao
+        recomendacao
 
-};
+    };
 
-localStorage.setItem(
+    localStorage.setItem(
 
-"planejamentoMarketing",
+        "planejamentoMarketing",
 
-JSON.stringify(planejamento)
+        JSON.stringify(planejamento)
 
-);
+    );
 
-document.getElementById("resultado").innerHTML = `
+    document.getElementById("resultado").innerHTML = `
 
 <h2>📈 Cenário Projetado</h2>
 
 <p>💰 Faturamento adicional:
-<strong>${faturamentoExtra.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</strong></p>
+<strong>${faturamentoExtra.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>
 
 <p>👥 Clientes necessários:
 <strong>${clientes}</strong></p>
@@ -242,16 +242,16 @@ document.getElementById("resultado").innerHTML = `
 <strong>${leads}</strong></p>
 
 <p>📢 Investimento em anúncios:
-<strong>${anuncios.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</strong></p>
+<strong>${anuncios.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>
 
 <p>📅 Investimento semanal:
-<strong>${semanal.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</strong></p>
+<strong>${semanal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>
 
 <p>☀️ Investimento diário:
-<strong>${diario.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</strong></p>
+<strong>${diario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>
 
 <p>👩‍💻 Investimento na sua especialista em Tráfego Pago:
-<strong>${fee.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</strong></p>
+<strong>${fee.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>
 
 <hr>
 
@@ -259,7 +259,7 @@ document.getElementById("resultado").innerHTML = `
 
 🏆 Investimento total mensal recomendado:
 
-${investimentoTotal.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+${investimentoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
 
 </h2>
 
@@ -293,12 +293,20 @@ style="width:${barra}%;background:${cor};">
 
 `;
 
-document.getElementById("areaParceria").style.display = "block";
+    document.getElementById("areaParceria").style.display = "block";
 
 }
 
-function abrirFormularioAceite(){
+function abrirFormularioAceite() {
 
-window.location.href = "aceite.html";
+    window.location.href = "aceite.html";
+
+}
+function abrirDocumento() {
+
+    window.open(
+        "documento-parceria.html",
+        "_blank"
+    );
 
 }
