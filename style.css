@@ -1449,3 +1449,67 @@ footer {
     background: #15803d;
 
 }
+
+#notificacao {
+
+    position: fixed;
+
+    top: 25px;
+
+    right: 25px;
+
+    z-index: 9999;
+
+    padding: 18px 25px;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+
+    font-size: 16px;
+
+    max-width: 400px;
+
+    display: none;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+    animation: aparecer .3s ease;
+
+}
+
+.notificacao-erro {
+
+    background: #dc2626;
+
+    color: #fff;
+
+}
+
+.notificacao-sucesso {
+
+    background: #16a34a;
+
+    color: #fff;
+
+}
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
