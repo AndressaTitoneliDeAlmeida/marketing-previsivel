@@ -406,13 +406,21 @@
 
                     documento.scrollHeight - 20;
 
-                if (chegouFim) {
+                if (chegouFim && !documentoCompleto) {
 
                     documentoCompleto = true;
 
                     document.getElementById("modalA").disabled = false;
 
                     document.getElementById("modalB").disabled = false;
+
+                    mostrarNotificacao(
+
+                        "✅ Leitura concluída. Agora marque os dois termos abaixo.",
+
+                        "notificacao-sucesso"
+
+                    );
 
                 }
 
