@@ -136,21 +136,10 @@
 
             </div>
 
-            <div class="check-item">
-
-                <input type="checkbox" id="modal1" disabled>
-
-                <label>
-
-                    Confirmo que as informações fornecidas são verdadeiras.
-
-                </label>
-
-            </div>
 
             <div class="check-item">
 
-                <input type="checkbox" id="modal2" disabled>
+                <input type="checkbox" id="modalA" disabled>
 
                 <label>
 
@@ -162,7 +151,7 @@
 
             <div class="check-item">
 
-                <input type="checkbox" id="modal3" disabled>
+                <input type="checkbox" id="modalB" disabled>
 
                 <label>
 
@@ -429,20 +418,55 @@
 
                     documentoCompleto = true;
 
+                    document.getElementById("modalA").disabled = false;
+
+                    document.getElementById("modalB").disabled = false;
+
                 }
 
             });
 
             document.getElementById(
-
                 "btnConfirmarAceite"
-
             ).addEventListener("click", () => {
 
                 if (!documentoCompleto) {
+
                     mostrarNotificacao(
 
-                        "📖 É necessário ler o documento até o final antes de confirmar.",
+                        "📖 É necessário ler o documento até o final antes de continuar.",
+
+                        "notificacao-erro"
+
+                    );
+
+                    setTimeout(() => {
+
+                        mostrarNotificacao(
+
+                            "☑ Após a leitura completa, marque os dois termos obrigatórios.",
+
+                            "notificacao-erro"
+
+                        );
+
+                    }, 800);
+
+                    return;
+
+                }
+
+                if (
+
+                    !document.getElementById("modalA").checked ||
+
+                    !document.getElementById("modalB").checked
+
+                ) {
+
+                    mostrarNotificacao(
+
+                        "☑ Marque os dois termos antes de confirmar.",
 
                         "notificacao-erro"
 
@@ -451,24 +475,6 @@
                     return;
 
                 }
-
-                document.getElementById(
-
-                    "modal1"
-
-                ).checked = true;
-
-                document.getElementById(
-
-                    "modal2"
-
-                ).checked = true;
-
-                document.getElementById(
-
-                    "modal3"
-
-                ).checked = true;
 
                 localStorage.setItem(
 
@@ -479,9 +485,10 @@
                 );
 
                 fecharModal();
+
                 mostrarNotificacao(
 
-                    "✅ Documento lido com sucesso.",
+                    "✅ Documento validado com sucesso.",
 
                     "notificacao-sucesso"
 
