@@ -1545,3 +1545,11 @@ footer {
     opacity: .5;
 
 }
+
+#notificacao2 {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 99999;
+    display: none;
+}
