@@ -276,9 +276,8 @@
             </button>
             <div id="mensagem"></div>
 
-            <div id="notificacao"></div>
-
-            <div id="notificacao2"></div>
+            <div id="notificacaoErro"></div>
+            <div id="notificacaoAviso"></div>
 
         </div>
 
@@ -371,21 +370,19 @@
             document.body.style.overflow = "auto";
 
         }
-        function mostrarNotificacao2(texto, tipo) {
+        function mostrarNotificacao(id, texto, classe) {
 
-            const notificacao = document.getElementById("notificacao2");
+            const box = document.getElementById(id);
 
-            notificacao.innerHTML = texto;
+            box.innerHTML = texto;
 
-            notificacao.className = "";
+            box.className = classe;
 
-            notificacao.classList.add(tipo);
-
-            notificacao.style.display = "block";
+            box.style.display = "block";
 
             setTimeout(() => {
 
-                notificacao.style.display = "none";
+                box.style.display = "none";
 
             }, 5000);
 
@@ -435,11 +432,13 @@
                 if (!documentoCompleto) {
 
                     mostrarNotificacao(
+                        "notificacaoErro",
                         "📖 É necessário ler o documento até o final antes de continuar.",
                         "notificacao-erro"
                     );
 
                     mostrarNotificacao2(
+                        "notificacaoAviso",
                         "☑ Após a leitura completa, marque os dois termos obrigatórios.",
                         "notificacao-aviso"
                     );
