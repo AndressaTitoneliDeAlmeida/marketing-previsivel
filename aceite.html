@@ -388,7 +388,25 @@
             document.body.style.overflow = "auto";
 
         }
+        function mostrarNotificacao(texto, tipo) {
 
+            const notificacao = document.getElementById("notificacao");
+
+            notificacao.innerHTML = texto;
+
+            notificacao.className = "";
+
+            notificacao.classList.add(tipo);
+
+            notificacao.style.display = "block";
+
+            setTimeout(() => {
+
+                notificacao.style.display = "none";
+
+            }, 4000);
+
+        }
         let documentoCompleto = false;
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -422,10 +440,11 @@
             ).addEventListener("click", () => {
 
                 if (!documentoCompleto) {
+                    mostrarNotificacao(
 
-                    alert(
+                        "📖 É necessário ler o documento até o final antes de confirmar.",
 
-                        "📖 É necessário ler o documento até o final antes de confirmar."
+                        "notificacao-erro"
 
                     );
 
@@ -460,10 +479,11 @@
                 );
 
                 fecharModal();
+                mostrarNotificacao(
 
-                alert(
+                    "✅ Documento lido com sucesso.",
 
-                    "✅ Documento lido com sucesso."
+                    "notificacao-sucesso"
 
                 );
 
@@ -509,7 +529,13 @@
 
             ) {
 
-                alert("Preencha todos os campos obrigatórios.");
+                mostrarNotificacao(
+
+                    "⚠️ Preencha todos os campos obrigatórios.",
+
+                    "notificacao-erro"
+
+                );
 
                 return;
 
@@ -525,9 +551,11 @@
 
             ) {
 
-                alert(
+                mostrarNotificacao(
 
-                    "📄 É obrigatório abrir, ler e confirmar o documento."
+                    "📄 É obrigatório abrir, ler e confirmar o documento.",
+
+                    "notificacao-erro"
 
                 );
 
@@ -541,9 +569,11 @@
 
             ) {
 
-                alert(
+                mostrarNotificacao(
 
-                    "☑ Marque o aceite da LGPD antes de formalizar a parceria."
+                    "☑ Marque o aceite da LGPD antes de formalizar a parceria.",
+
+                    "notificacao-erro"
 
                 );
 
