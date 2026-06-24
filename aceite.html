@@ -9,7 +9,178 @@
 </head>
 
 <body>
+    <div id="modalDocumento" class="modal">
 
+        <div class="modal-conteudo">
+
+            <span class="fechar-modal">
+
+                &times;
+
+            </span>
+
+            <h2>
+
+                🤝 Formalização da Parceria Comercial
+
+            </h2>
+
+            <div id="conteudoDocumento" class="documento-scroll">
+
+                <!-- documento -->
+
+                <h3>1. Objetivo da parceria</h3>
+
+                <p>
+                    Este documento tem como objetivo formalizar a parceria comercial para a prestação do serviço de
+                    Gestão de Tráfego Pago.
+                </p>
+
+                <p>
+                    O objetivo desta parceria é estruturar, executar e otimizar campanhas de anúncios pagos.
+                </p>
+
+                <h3>2. Planejamento Estratégico</h3>
+
+                <p>
+                    Os investimentos sugeridos são definidos através do Sistema Marketing Previsível™.
+                </p>
+
+                <h3>3. O que está incluso</h3>
+
+                <ul>
+
+                    <li>✅ Planejamento estratégico</li>
+
+                    <li>✅ Configuração das campanhas</li>
+
+                    <li>✅ Definição do público</li>
+
+                    <li>✅ Otimização contínua</li>
+
+                    <li>✅ Análise de resultados</li>
+
+                    <li>✅ Conteúdo personalizado</li>
+
+                </ul>
+
+                <h3>4. Acesso às plataformas</h3>
+
+                <p>
+                    As contas permanecerão sob propriedade da empresa contratante.
+                </p>
+
+                <h3>5. Produção de conteúdo</h3>
+
+                <p>
+                    Os materiais serão desenvolvidos respeitando a identidade visual da empresa.
+                </p>
+
+                <h3>6. Responsabilidades da empresa</h3>
+
+                <ul>
+
+                    <li>✅ Fornecer informações verdadeiras</li>
+
+                    <li>✅ Disponibilizar acessos</li>
+
+                    <li>✅ Aprovar conteúdos</li>
+
+                    <li>✅ Manter comunicação ativa</li>
+
+                </ul>
+
+                <h3>7. Transparência dos resultados</h3>
+
+                <p>
+
+                    Não é possível garantir vendas ou faturamento.
+
+                </p>
+
+                <h3>8. Limites do serviço</h3>
+
+                <ul>
+
+                    <li>❌ Desenvolvimento de sites</li>
+
+                    <li>❌ Atendimento comercial</li>
+
+                    <li>❌ Gestão financeira</li>
+
+                </ul>
+
+                <h3>9. Comunicação</h3>
+
+                <p>
+
+                    📱 WhatsApp
+
+                    <br>
+
+                    📧 E-mail
+
+                    <br>
+
+                    📅 Reuniões agendadas
+
+                </p>
+
+                <div style="height:80px;"></div>
+
+                <div id="fimDocumento">
+
+                    ✅ Fim do documento
+
+                </div>
+
+            </div>
+
+            <div class="check-item">
+
+                <input type="checkbox" id="modal1" disabled>
+
+                <label>
+
+                    Confirmo que as informações fornecidas são verdadeiras.
+
+                </label>
+
+            </div>
+
+            <div class="check-item">
+
+                <input type="checkbox" id="modal2" disabled>
+
+                <label>
+
+                    Estou ciente de que os acessos às plataformas permanecerão sob propriedade da minha empresa.
+
+                </label>
+
+            </div>
+
+            <div class="check-item">
+
+                <input type="checkbox" id="modal3" disabled>
+
+                <label>
+
+                    Estou ciente de que os resultados dependem da colaboração entre as partes.
+
+                </label>
+
+            </div>
+
+            <button id="btnConfirmarAceite">
+
+                ✅ Confirmar aceite
+
+            </button>
+
+        </div>
+
+    </div>
     <div class="container">
         <header>
             <h1>🤝 Formalização da Parceria Comercial</h1>
@@ -109,7 +280,7 @@
 
             </div>
 
-            <button type="button" class="btn-documento" onclick="abrirDocumento()">
+            <button type="button" class="btn-documento" onclick="abrirModal()">
 
                 📄 Ler documento completo
 
@@ -188,18 +359,96 @@
 
             e.target.value = valor;
 
+
         });
-        function abrirDocumento() {
+        function abrirModal() {
 
-            window.open(
+            document.getElementById(
 
-                "documento-parceria.html",
+                "modalDocumento"
 
-                "_blank"
-
-            );
+            ).style.display = "flex";
 
         }
+
+        let documentoCompleto = false;
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const documento = document.getElementById("conteudoDocumento");
+
+            documento.addEventListener("scroll", () => {
+
+                const chegouFim =
+
+                    documento.scrollTop +
+
+                    documento.clientHeight >=
+
+                    documento.scrollHeight - 20;
+
+                if (chegouFim) {
+
+                    documentoCompleto = true;
+
+                }
+
+            });
+            document.getElementById(
+
+                "btnConfirmarAceite"
+
+            ).addEventListener("click", () => {
+
+                if (!documentoCompleto) {
+
+                    alert(
+
+                        "📖 É necessário ler o documento até o final antes de confirmar."
+
+                    );
+
+                    return;
+
+                }
+
+                document.getElementById(
+
+                    "modal1"
+
+                ).checked = true;
+
+                document.getElementById(
+
+                    "modal2"
+
+                ).checked = true;
+
+                document.getElementById(
+
+                    "modal3"
+
+                ).checked = true;
+
+                localStorage.setItem(
+
+                    "documentoLido",
+
+                    "sim"
+
+                );
+
+                fecharModal();
+
+                alert(
+
+                    "✅ Documento lido com sucesso."
+
+                );
+
+            });
+
+        });
         async function enviarParceria() {
 
             const nome = document.getElementById("nome").value;
@@ -246,13 +495,17 @@
 
             if (
 
-                localStorage.getItem("documentoLido") !== "sim"
+                localStorage.getItem(
+
+                    "documentoLido"
+
+                ) !== "sim"
 
             ) {
 
                 alert(
 
-                    "📄 É obrigatório abrir e ler o documento antes de continuar."
+                    "📄 É obrigatório abrir, ler e confirmar o documento."
 
                 );
 
