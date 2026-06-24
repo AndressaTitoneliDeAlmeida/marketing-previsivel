@@ -9,70 +9,7 @@
 </head>
 
 <body>
-    <div id="modalDocumento" class="modal">
 
-        <div class="modal-conteudo">
-
-            <span class="fechar-modal" onclick="fecharModal()">
-
-                &times;
-
-            </span>
-
-            <h2>
-
-                🤝 Formalização da Parceria Comercial
-
-            </h2>
-
-            <iframe src="https://doc.clickup.com/90171269808/d/h/2kza0rng-717/d4b317e8a2237e6/2kza0rng-397" width="100%"
-                height="450" frameborder="0"></iframe>
-
-            <div class="check-item">
-
-                <input type="checkbox" id="modal1">
-
-                <label>
-
-                    Confirmo que as informações fornecidas são verdadeiras.
-
-                </label>
-
-            </div>
-
-            <div class="check-item">
-
-                <input type="checkbox" id="modal2">
-
-                <label>
-
-                    Estou ciente de que os acessos às plataformas permanecerão sob propriedade da minha empresa.
-
-                </label>
-
-            </div>
-
-            <div class="check-item">
-
-                <input type="checkbox" id="modal3">
-
-                <label>
-
-                    Estou ciente de que os resultados dependem da colaboração entre as partes.
-
-                </label>
-
-            </div>
-
-            <button type="button" onclick="confirmarAceite()">
-
-                ✅ Confirmar aceite
-
-            </button>
-
-        </div>
-
-    </div>
     <div class="container">
         <header>
             <h1>🤝 Formalização da Parceria Comercial</h1>
@@ -252,59 +189,17 @@
             e.target.value = valor;
 
         });
+        function abrirDocumento() {
 
-        function abrirModal() {
+            window.open(
 
-            document.getElementById("modalDocumento").style.display = "flex";
+                "documento-parceria.html",
 
-        }
+                "_blank"
 
-        function fecharModal() {
-
-            document.getElementById("modalDocumento").style.display = "none";
-
-        }
-
-        function confirmarAceite() {
-
-            if (
-
-                !document.getElementById("modal1").checked ||
-
-                !document.getElementById("modal2").checked ||
-
-                !document.getElementById("modal3").checked
-
-            ) {
-
-                alert(
-
-                    "É obrigatório ler o documento e confirmar todos os aceites."
-
-                );
-
-                return;
-
-            }
-
-            fecharModal();
-
-            if (
-
-                !document.getElementById("aceitePrincipal").checked
-
-            ) {
-
-                alert(
-
-                    "✅ Documento confirmado. Agora marque o aceite 'Li e concordo com a Formalização da Parceria Comercial e autorizo o tratamento dos meus dados conforme a LGPD' antes de formalizar a parceria."
-
-                );
-
-            }
+            );
 
         }
-
         async function enviarParceria() {
 
             const nome = document.getElementById("nome").value;
@@ -351,13 +246,29 @@
 
             if (
 
+                localStorage.getItem("documentoLido") !== "sim"
+
+            ) {
+
+                alert(
+
+                    "📄 É obrigatório abrir e ler o documento antes de continuar."
+
+                );
+
+                return;
+
+            }
+
+            if (
+
                 !document.getElementById("aceitePrincipal").checked
 
             ) {
 
                 alert(
 
-                    "É obrigatório ler o documento, confirmar os aceites e marcar a concordância com a LGPD antes de formalizar a parceria."
+                    "☑ Marque o aceite da LGPD antes de formalizar a parceria."
 
                 );
 
