@@ -1595,3 +1595,10 @@ footer {
     background: #16a34a;
     color: white;
 }
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+}
