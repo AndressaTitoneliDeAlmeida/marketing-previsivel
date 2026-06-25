@@ -454,12 +454,8 @@
                     document.getElementById("btnConfirmarAceite").innerHTML =
                         "✅ Confirmar aceite";
 
-                    mostrarNotificacao(
-                        "notificacaoAviso",
-                        "✅ Leitura concluída. Agora marque os dois termos abaixo.",
-                        "notificacao-sucesso"
-                    );
-
+                     mostrarNotificacao("✅ Leitura concluída. Agora marque os dois termos abaixo.", "sucesso");
+                    
                 }
 
             });
@@ -470,13 +466,8 @@
 
                 if (!documentoCompleto) {
 
-                    mostrarNotificacao(
-                        "notificacaoErro",
-                        "📖 É necessário ler o documento até o final antes de continuar.",
-                        "notificacao-erro"
-                    );
 
-
+                    mostrarNotificacao("📖 É necessário ler o documento até o final antes de continuar.", "erro");
 
                     return;
 
@@ -506,11 +497,7 @@
 
                 fecharModal();
 
-                mostrarNotificacao(
-                    "notificacaoAviso",
-                    "✅ Documento validado com sucesso.",
-                    "notificacao-sucesso"
-                );
+                mostrarNotificacao("✅ Documento validado com sucesso.", "sucesso")
             });
 
         });
