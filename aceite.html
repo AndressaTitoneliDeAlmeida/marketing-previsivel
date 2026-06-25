@@ -466,7 +466,7 @@
 
                 if (!documentoCompleto) {
 
-
+                    alert("Teste");
                     mostrarNotificacao("📖 É necessário ler o documento até o final antes de continuar.", "erro");
 
                     return;
@@ -493,7 +493,9 @@
 
                     "sim"
 
+
                 );
+
 
                 fecharModal();
 
@@ -559,18 +561,6 @@
             ) {
 
                 mostrarNotificacao("📄 É obrigatório abrir, ler e confirmar o documento.", "erro");
-
-
-                return;
-
-            }
-            if (
-
-                !document.getElementById("aceitePrincipal").checked
-
-            ) {
-
-                mostrarNotificacao("📄 É obrigatório ler todo o documento.", "erro");
 
 
                 return;
