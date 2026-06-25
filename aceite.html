@@ -170,11 +170,12 @@
 
                 </div>
 
-                <button id="btnConfirmarAceite" type="button">
-                    ✅ Confirmar aceite
+                <button id="btnConfirmarAceite" type="button" disabled>
+                    📖 Leia o documento para liberar o aceite
                 </button>
 
             </div>
+
 
         </div> <!-- fecha modal-conteudo -->
 
@@ -434,6 +435,11 @@
 
                     document.getElementById("modalB").disabled = false;
 
+                    document.getElementById("btnConfirmarAceite").disabled = false;
+
+                    document.getElementById("btnConfirmarAceite").innerHTML =
+                        "✅ Confirmar aceite";
+
                     mostrarNotificacao(
                         "notificacaoAviso",
                         "✅ Leitura concluída. Agora marque os dois termos abaixo.",
@@ -471,6 +477,8 @@
                 ) {
 
                     mostrarNotificacao(
+
+                        "notificacaoErro",
 
                         "☑ Marque os dois termos antes de confirmar.",
 
@@ -540,6 +548,7 @@
             ) {
 
                 mostrarNotificacao(
+                    "notificacaoErro",
 
                     "⚠️ Preencha todos os campos obrigatórios.",
 
@@ -562,6 +571,7 @@
             ) {
 
                 mostrarNotificacao(
+                    "notificacaoErro",
 
                     "📄 É obrigatório abrir, ler e confirmar o documento.",
 
@@ -580,6 +590,7 @@
             ) {
 
                 mostrarNotificacao(
+                    "notificacaoErro",
 
                     "☑ Marque o aceite da LGPD antes de formalizar a parceria.",
 
