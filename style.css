@@ -1574,10 +1574,12 @@ footer {
 }
 
 .area-aceite {
+    position: sticky;
+    bottom: 0;
+    background: white;
     border-top: 1px solid #ddd;
-    padding-top: 15px;
-    margin-top: 10px;
-    background: #fff;
+    padding: 15px;
+    z-index: 10;
 }
 
 .check-item {
@@ -1586,4 +1588,10 @@ footer {
 
 #btnConfirmarAceite {
     width: 100%;
+}
+
+.notificacao-sucesso,
+.notificacao-aviso {
+    background: #16a34a;
+    color: white;
 }
