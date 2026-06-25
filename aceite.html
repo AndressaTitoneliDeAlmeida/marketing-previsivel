@@ -443,13 +443,13 @@
 
                 if (chegouFim && !documentoCompleto) {
 
-                    documentoCompleto = false;
+                    documentoCompleto = true;
 
                     document.getElementById("modalA").disabled = false;
 
                     document.getElementById("modalB").disabled = false;
 
-                    document.getElementById("btnConfirmarAceite").disabled = false;
+                    document.getElementById("btnConfirmarAceite") = false;
 
                     document.getElementById("btnConfirmarAceite").innerHTML =
                         "✅ Confirmar aceite";
