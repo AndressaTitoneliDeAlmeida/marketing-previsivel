@@ -454,8 +454,8 @@
                     document.getElementById("btnConfirmarAceite").innerHTML =
                         "✅ Confirmar aceite";
 
-                     mostrarNotificacao("✅ Leitura concluída. Agora marque os dois termos abaixo.", "sucesso");
-                    
+                    mostrarNotificacao("✅ Leitura concluída. Agora marque os dois termos abaixo.", "sucesso");
+
                 }
 
             });
@@ -540,14 +540,9 @@
 
             ) {
 
-                mostrarNotificacao(
-                    "notificacaoErro",
 
-                    "⚠️ Preencha todos os campos obrigatórios.",
+                mostrarNotificacao("⚠️ Preencha todos os campos obrigatórios.", "erro");
 
-                    "notificacao-erro"
-
-                );
 
                 return;
 
@@ -563,14 +558,8 @@
 
             ) {
 
-                mostrarNotificacao(
-                    "notificacaoErro",
+                mostrarNotificacao("📄 É obrigatório abrir, ler e confirmar o documento.", "erro");
 
-                    "📄 É obrigatório abrir, ler e confirmar o documento.",
-
-                    "notificacao-erro"
-
-                );
 
                 return;
 
@@ -582,14 +571,7 @@
 
             ) {
 
-                mostrarNotificacao(
-                    "notificacaoErro",
-
-                    "☑ Marque o aceite da LGPD antes de formalizar a parceria.",
-
-                    "notificacao-erro"
-
-                );
+                mostrarNotificacao("☑ Marque o aceite da LGPD antes de formalizar a parceria.", "erro");
 
                 return;
 
