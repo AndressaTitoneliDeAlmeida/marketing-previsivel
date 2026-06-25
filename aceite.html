@@ -449,7 +449,7 @@
 
                     document.getElementById("modalB").disabled = false;
 
-                    document.getElementById("btnConfirmarAceite") = true;
+                    document.getElementById("btnConfirmarAceite").disabled = false;
 
                     document.getElementById("btnConfirmarAceite").innerHTML =
                         "✅ Confirmar aceite";
@@ -466,7 +466,7 @@
 
                 if (!documentoCompleto) {
 
-                    alert("Teste");
+
                     mostrarNotificacao("📖 É necessário ler o documento até o final antes de continuar.", "erro");
 
                     return;
@@ -492,10 +492,10 @@
                     "documentoLido",
 
                     "sim"
-
+                    
 
                 );
-
+                
 
                 fecharModal();
 
@@ -578,7 +578,7 @@
                 return;
 
             }
-
+            
 
             const dados = {
 
