@@ -564,6 +564,18 @@
                 return;
 
             }
+            if (
+
+                !document.getElementById("aceitePrincipal").checked
+
+            ) {
+
+                mostrarNotificacao("📄 É obrigatório ler todo o documento.", "erro");
+
+
+                return;
+
+            }
 
             if (
 
@@ -576,6 +588,7 @@
                 return;
 
             }
+
 
             const dados = {
 
