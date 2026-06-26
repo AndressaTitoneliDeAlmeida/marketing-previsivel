@@ -300,13 +300,16 @@
                 <h2>👤 Dados do responsável</h2>
                 <p class="observacao"> ℹ️ Os campos marcados com <span class="obrigatorio">*</span> são obrigatórios.
                 </p>
-                <input type="text" id="nome" placeholder="Nome completo do responsável *"> <input type="email"
-                    id="email" placeholder="E-mail *"> <input type="text" id="whatsapp" placeholder="WhatsApp *">
-                <h2>🏢 Dados da empresa</h2> <input type="text" id="empresa" placeholder="Nome da empresa *"> <input
-                    type="text" id="cnpj" placeholder="CNPJ *"> <input type="text" id="instagram"
-                    placeholder="Instagram (opcional)"> <input type="text" id="cidade" placeholder="Cidade *"> <input
-                    type="text" id="estado" placeholder="Estado *"> <input type="text" id="pais" value="Brasil"
-                    readonly>
+                <input type="text" id="nome" placeholder="Nome completo do responsável *">
+                <input type="email" id="email" placeholder="E-mail *">
+                <input type="text" id="whatsapp" placeholder="WhatsApp *" maxlength="15">
+                <h2>🏢 Dados da empresa</h2>
+                <input type="text" id="empresa" placeholder="Nome da empresa *">
+                <input type="text" id="cnpj" placeholder="CNPJ *" maxlength="18">
+                <input type="text" id="instagram" placeholder="Instagram (opcional)">
+                <input type="text" id="cidade" placeholder="Cidade *">
+                <input type="text" id="estado" placeholder="Estado *">
+                <input type="text" id="pais" value="Brasil" readonly>
                 <hr>
                 <h2>📄 Resumo da contratação</h2>
                 <p> 📊 O planejamento estratégico apresentado anteriormente servirá como referência inicial para a
@@ -395,8 +398,10 @@
 
             let valor = e.target.value.replace(/\D/g, "");
 
-            valor = valor.replace(/^(\d{2})(\d)/, "($1) $2");
+            // Limita a 11 dígitos
+            valor = valor.substring(0, 11);
 
+            valor = valor.replace(/^(\d{2})(\d)/, "($1) $2");
             valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
 
             e.target.value = valor;
@@ -407,12 +412,12 @@
 
             let valor = e.target.value.replace(/\D/g, "");
 
+            // Limita a 14 dígitos
+            valor = valor.substring(0, 14);
+
             valor = valor.replace(/^(\d{2})(\d)/, "$1.$2");
-
             valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
-
             valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2");
-
             valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
 
             e.target.value = valor;
