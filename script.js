@@ -231,7 +231,7 @@ function calcular() {
     document.getElementById("resultado").innerHTML = `
 
 <h2>📈 Cenário Projetado</h2>
-
+<p>Quanto investir para perseguir a meta?</p>
 <p>💰 Faturamento adicional:
 <strong>${faturamentoExtra.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>
 
@@ -282,7 +282,7 @@ style="width:${barra}%;background:${cor};">
 <hr>
 
 <h3>🧠 Diagnóstico Inteligente</h3>
-
+<p>O momento atual da empresa favorece atingir essa meta?</p>
 <p>⭐ Pontuação: <strong>${pontuacao}/100</strong></p>
 
 <p>🎯 Potencial: <strong>${potencial}</strong></p>
