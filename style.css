@@ -998,11 +998,15 @@ footer {
 
     background: #fff;
 
-    width: 98%;
+    width: 99%;
 
-    max-width: 1100px;
+    max-width: 980px;
 
     max-height: 95vh;
+
+    display: flex;
+    
+    flex-direction: column;
 
     overflow-y: auto;
 
@@ -1381,11 +1385,11 @@ footer {
 
 .documento-scroll {
 
+    overflow-y: auto;
+
     flex: 1;
 
-    height: 300vh;
-
-    overflow-y: auto;
+    min-height: 0;
 
     padding: 15px;
 
@@ -1639,6 +1643,9 @@ footer {
         height: 96vh;
         max-height: 96vh;
 
+        display: flex;
+        flex-direction: column;
+
         padding: 15px;
 
         border-radius: 15px;
@@ -1647,7 +1654,8 @@ footer {
 
     .documento-scroll {
 
-        height: 72vh;
+        flex: 1;
+        min-height: 0;
 
     }
 
