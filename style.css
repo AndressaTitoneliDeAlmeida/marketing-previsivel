@@ -1383,7 +1383,7 @@ footer {
 
     flex: 1;
 
-    height: 55vh;
+    height: 300vh;
 
     overflow-y: auto;
 
@@ -1626,6 +1626,57 @@ footer {
     .check-item label {
 
         font-size: 16px;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .modal-conteudo {
+
+        width: 98%;
+        height: 96vh;
+        max-height: 96vh;
+
+        padding: 15px;
+
+        border-radius: 15px;
+
+    }
+
+    .documento-scroll {
+
+        height: 72vh;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .documento-scroll {
+
+        font-size: 15px;
+        line-height: 1.6;
+
+    }
+
+    .documento-scroll h1 {
+
+        font-size: 24px;
+
+    }
+
+    .documento-scroll h2 {
+
+        font-size: 20px;
+
+    }
+
+    .documento-scroll h3 {
+
+        font-size: 18px;
 
     }
 
