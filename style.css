@@ -1000,7 +1000,7 @@ footer {
 
     width: 94%;
 
-    max-width: 94px;
+    max-width: 900px;
 
     max-height: 95vh;
 
@@ -1116,7 +1116,7 @@ footer {
 
 @media(max-width:768px) {
 
-    .modal-conteudo>h2 {
+    .modal-conteudo> h2 {
 
         padding-right: 70px;
 
@@ -1130,7 +1130,7 @@ footer {
 
 }
 
-.modal-conteudo>h2 {
+.modal-conteudo> h2 {
     margin: 0 60px 15px 0;
     font-size: 32px;
     line-height: 1.2;
@@ -1340,7 +1340,7 @@ footer {
 
     width: 94%;
 
-    max-width: 94px;
+    max-width: 900px;
 
     height: 95vh;
 
