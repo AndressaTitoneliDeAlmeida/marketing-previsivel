@@ -998,11 +998,11 @@ footer {
 
     position: absolute;
 
-    top: 18px;
+    top: 30px;
 
-    right: 22px;
+    right: 20px;
 
-    font-size: 36px;
+    font-size: 34px;
 
     font-weight: bold;
 
@@ -1086,29 +1086,6 @@ footer {
 
     margin-top: 2px;
 
-}
-
-@media(max-width:768px) {
-
-    .modal-conteudo>h2 {
-
-        padding-right: 70px;
-
-    }
-
-    .modal iframe {
-
-        height: 350px;
-
-    }
-
-}
-
-.modal-conteudo>h2 {
-    margin: 0 60px 15px 0;
-    font-size: 32px;
-    line-height: 1.2;
-    color: #5b21b6;
 }
 
 /* ===== DOCUMENTO PARCERIA ===== */
@@ -1555,7 +1532,9 @@ footer {
 
     .documento-scroll h1 {
 
-        font-size: 24px;
+        font-size: 18px;
+
+        line-height: 1.3;
 
     }
 
