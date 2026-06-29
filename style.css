@@ -998,9 +998,9 @@ footer {
 
     position: absolute;
 
-    top: 30px;
+    top: 32px;
 
-    right: 20px;
+    right: 24px;
 
     font-size: 34px;
 
@@ -1008,7 +1008,9 @@ footer {
 
     cursor: pointer;
 
-    z-index: 1000;
+    color: #666;
+
+    line-height: 1;
 
 }
 
@@ -1268,7 +1270,7 @@ footer {
 
     border-radius: 20px;
 
-    padding: 20px 18px 15px;
+    padding: 45px 22px 18px;
 
     position: relative;
 
